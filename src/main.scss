@@ -1,0 +1,28 @@
+nav.sidenav {
+    background-color: black;
+    color: aliceblue;
+    position: absolute;
+    left: 0;
+    top: 92px;
+    bottom: 0;
+    width: 178px;
+}
+
+div.mast {
+    background-color: black;
+    color: aliceblue;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 92px;
+}
+
+div.content {
+    background-color: azure;
+    color: black;
+    position: absolute;
+    left: 178px;
+    top: 92px;
+    right: 0;
+    bottom: 0;
+}

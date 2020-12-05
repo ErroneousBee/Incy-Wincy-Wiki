@@ -1,15 +1,10 @@
-
 function onload() {
     console.trace();
-    read_file_into("content/test.txt", document.getElementById("test"));
+    read_file_into("content/mast.txt", document.getElementById("mast"));
+    read_file_into("content/sidenav.txt", document.getElementById("sidenav"));
+    read_file_into("content/test.txt", document.getElementById("content"));
 }
 
-function read_file_into(file,element) {
-
-    const fr = new FileReader();
-    fr.onload = function (e) {
-        console.log(e);
-        element.innerHTML = e.target.result;
-    };
-    fr.readAsText(file);
+function read_file_into(file, element) {
+    element.innerHTML = file;
 }
