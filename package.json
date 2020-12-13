@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ErroneousBee/PortaWiki/issues"
   },
-  "homepage": "https://github.com/ErroneousBee/PortaWiki#readme"
+  "homepage": "https://github.com/ErroneousBee/PortaWiki#readme",
+  "dependencies": {
+    "yaml-front-matter": "^4.1.1"
+  }
 }
