@@ -1,12 +1,21 @@
+
+const config = {
+    extension_precedence: ["md", "html", "htm", "txt"],
+    theme: "default",
+    home: "Home.md"
+}
+
 function onload() {
     load_nav_sidebar();
 
     read_file_into("content/logo.html", document.getElementById("logo"));
     read_file_into("content/mast.txt", document.getElementById("mast"));
     read_file_into("content/sidenav.md", document.getElementById("sidenav"));
-    read_file_into("content/Home.md", document.getElementById("content"));
+    read_file_into("content/" + config.home, document.getElementById("content"));
 
     document.querySelector("nav#sidenav").onclick = (e) => {
+
+        // TODO: CSS select and hover and open and all the effects
         console.log(e.target);
 
         const path = get_path_from_element(e.target);
@@ -17,6 +26,22 @@ function onload() {
 
     };
 }
+
+/**
+ * Try and load a file by trying file extentions in a precedence order
+ * @param {string} pathname 
+ */
+function get_file_extention(pathname) {
+    // TODO: code here
+
+}
+
+function read_config() {
+    // TODO: fetch, etc.
+    // TODO: Preen, add defaults and stash in a global
+    // TODO: Report via alert or console?
+}
+
 
 function read_file_into(file, element) {
 
