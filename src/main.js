@@ -1,24 +1,17 @@
 function onload() {
-    load_nav_sidebar();
 
-    read_file_into("content/logo.html", document.getElementById("logo"));
-    read_file_into("content/mast.txt", document.getElementById("mast"));
-    read_file_into("content/sidenav.md", document.getElementById("sidenav"));
-    read_file_into("content/Home.md", document.getElementById("content"));
+    read_path_into_element("content/logo.html", document.getElementById("logo"));
+    read_path_into_element("content/mast.txt", document.getElementById("mast"));
+    read_path_into_element("content/sidenav.md", document.getElementById("sidenav"));
+    read_path_into_element("content/Home.md", document.getElementById("content"));
 
     document.querySelector("nav#sidenav").onclick = (e) => {
-        console.log(e.target);
-
         const path = get_path_from_element(e.target);
-
-        read_file_into("content/" + path, document.getElementById("content"));
-
-
-
+        read_path_into_element("content/" + path, document.getElementById("content"));
     };
 }
 
-function read_file_into(file, element) {
+function read_path_into_element(file, element) {
 
     // Get the file type
     let filename = file.split('/').pop();
@@ -26,7 +19,20 @@ function read_file_into(file, element) {
     if (filetype === "") {
         filetype = "md";
         file = file + "." + filetype;
+        filename = filename + "." + filetype;
     }
+
+    // Get the path for this file.
+    const pathparts = file.split('/');
+    pathparts.shift();
+    const path = pathparts.join("/").slice(0, -1 * (1 + filetype.length));
+    console.log("PATH=",path);
+
+
+
+
+
+
 
     fetch(file)
         .then(response => response.text())
@@ -42,8 +48,9 @@ function read_file_into(file, element) {
                     break;
 
                 case "md":
-                    const converter = new showdown.Converter()
-                    element.innerHTML = converter.makeHtml(text);;
+                    const markdown = handle_page_frontmatter(text);
+                    const converter = new showdown.Converter();
+                    element.innerHTML = converter.makeHtml(markdown);
                     break;
 
                 default:
@@ -51,17 +58,29 @@ function read_file_into(file, element) {
                     break;
 
             }
-        }
-        );
+        });
 
 
 }
 
+function handle_page_frontmatter(text) {
+    // First line is the seperator
+    const sep = text.split("\n", 1)[0].trim();
+    const [fm, md] = text.split("\n" + sep, 2);
+    try {
+        const doc = jsyaml.safeLoad(fm);
+        console.log(doc);
+    } catch (e) {
+        console.log(e);
+    }
+    return md;
+}
+
 function load_nav_sidebar() {
 
-    // TODO: look for the html or md
-    read_file_into("content/sidenav.txt", document.getElementById("sidenav"));
+    read_path_into_element("content/sidenav.md", document.getElementById("sidenav"));
 
+    //TODO: extract the pages from the list, to pull tooltips and other stuff
 
 }
 

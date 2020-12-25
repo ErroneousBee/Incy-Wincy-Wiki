@@ -1,3 +1,6 @@
+---
+title: Navigation
+---
 * Home
 * Group2
     * Group2a
