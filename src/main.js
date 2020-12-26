@@ -6,6 +6,8 @@ const config = {
 }
 
 function onload() {
+
+    load_config();
     load_nav_sidebar();
 
     read_file_into("content/logo.html", document.getElementById("logo"));
@@ -37,9 +39,13 @@ function get_file_extention(pathname) {
 }
 
 function read_config() {
-    // TODO: fetch, etc.
-    // TODO: Preen, add defaults and stash in a global
-    // TODO: Report via alert or console?
+    fetch("config.yaml")
+        .then(response => response.text())
+        .then(text => {
+            // TODO: convert/extract text
+            // TODO: Preen, add defaults and stash in a global
+            // TODO: Report via alert or console?
+        });
 }
 
 
