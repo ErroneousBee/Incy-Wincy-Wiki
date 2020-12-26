@@ -62,12 +62,6 @@ function read_path_into_element(file, element) {
     const path = pathparts.join("/").slice(0, -1 * (1 + filetype.length));
     console.log("PATH=",path);
 
-
-
-
-
-
-
     fetch(file)
         .then(response => response.text())
         .then(text => {
@@ -82,9 +76,8 @@ function read_path_into_element(file, element) {
                     break;
 
                 case "md":
-                    const markdown = handle_page_frontmatter(text);
-                    const converter = new showdown.Converter();
-                    element.innerHTML = converter.makeHtml(markdown);
+                    const [html, json] = convert_markdown_page(text,file);
+                    element.innerHTML = html;
                     break;
 
                 default:
@@ -97,17 +90,24 @@ function read_path_into_element(file, element) {
 
 }
 
-function handle_page_frontmatter(text) {
+/**
+ * Given the md file contents, strip and deal with the yaml frontmatter, and give us the md text.
+ * @param {string} text 
+ */
+function convert_markdown_page(text, source) {
+
     // First line is the seperator
     const sep = text.split("\n", 1)[0].trim();
     const [fm, md] = text.split("\n" + sep, 2);
     try {
-        const doc = jsyaml.safeLoad(fm);
-        console.log(doc);
+        const json = jsyaml.safeLoad(fm);
     } catch (e) {
-        console.log(e);
+        console.error("Failure reading page frontmatter from ", source, e);
     }
-    return md;
+
+    const converter = new showdown.Converter();
+    return [json,converter.makeHtml(md)];
+
 }
 
 function load_nav_sidebar() {
@@ -119,7 +119,11 @@ function load_nav_sidebar() {
 }
 
 
-
+/**
+ * From the li element of a nav manu, go up the tree to the nav element, and get a path that is the page to load.
+ * @param {Element} el 
+ * @param {string} acc 
+ */
 function get_path_from_element(el, acc) {
 
     console.log('xx', el, acc, (!acc));
