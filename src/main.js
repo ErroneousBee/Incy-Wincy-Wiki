@@ -8,11 +8,8 @@ const config = {
 function onload() {
 
     load_config();
-    load_nav_sidebar();
+    load_side_content();
 
-    read_path_into_element("content/logo.html", document.getElementById("logo"));
-    read_path_into_element("content/mast.txt", document.getElementById("mast"));
-    read_path_into_element("content/sidenav.md", document.getElementById("sidenav"));
     read_path_into_element("content/" + config.home, document.getElementById("content"));
 
     document.querySelector("nav#sidenav").onclick = (e) => {
@@ -45,7 +42,13 @@ function load_config() {
 }
 
 
+/**
+ * Read a content file into the content element, update ant navbars along the way.
+ * @param {*} file 
+ * @param {*} element 
+ */
 function read_path_into_element(file, element) {
+    // TODO: Split out the non-content loads and have them use more direct (faster) methods.
 
     // Get the file type
     let filename = file.split('/').pop();
@@ -110,7 +113,11 @@ function convert_markdown_page(text, source) {
 
 }
 
-function load_nav_sidebar() {
+function load_side_content() {
+
+    read_path_into_element("content/logo.html", document.getElementById("logo"));
+    read_path_into_element("content/mast.txt", document.getElementById("mast"));
+    // TODO: Load topbar droper menus
 
     read_path_into_element("content/sidenav.md", document.getElementById("sidenav"));
 
