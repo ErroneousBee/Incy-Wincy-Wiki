@@ -6,9 +6,12 @@ const config = {
 
 const app = {
 
-    onload() {
+    async onload() {
 
-        app.load_config();
+        // First, we wait for the config, cos how else will we know what to do?
+        await app.load_config();
+
+        // Load the assorted navigation, banners and whatnot.
         app.load_side_content();
 
         app.read_path_into_element("content/" + config.home, document.getElementById("content"));
@@ -32,8 +35,8 @@ const app = {
         return pathname;
     },
 
-    load_config() {
-        fetch("config.yaml")
+    async load_config() {
+        await fetch("config.yaml")
             .then(response => response.text())
             .then(text => {
                 try {
@@ -49,6 +52,9 @@ const app = {
                 if (config.show_config) {
                     console.log("Configuration:", config);
                 }
+
+                console.log("Configuration2:", config);
+
 
             });
 
