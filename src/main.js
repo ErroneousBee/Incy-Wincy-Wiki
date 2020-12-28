@@ -1,7 +1,8 @@
 const Config = {
     extension_precedence: ["md", "html", "htm", "txt"],
     theme: "default",
-    home: "Home.md"
+    home: "Home.md",
+    contentpath: "content/"
 };
 
 const App = {
@@ -71,7 +72,7 @@ const App = {
 
         console.log("From URL", url, path, !path);
 
-        App.read_path_into_element("content/" + path, document.getElementById("content"));
+        App.read_path_into_element(Config.contentpath + path, document.getElementById("content"));
 
     },
 
@@ -84,7 +85,7 @@ const App = {
         const url = new URL(window.location.href);
         url.hash = '#' + path;
         window.location.href = url.toString();
-        
+
     },
 
     /**
@@ -133,14 +134,13 @@ const App = {
             });
 
     },
-    
+
     /**
      * Read a content file into the content element, update ant navbars along the way.
-     * @param {*} file 
-     * @param {*} element 
+     * @param {*} file - fie name including extension and directory levels
+     * @param {*} element - DOM element to put the content into
      */
     read_path_into_element(file, element) {
-        // TODO: Split out the non-content loads and have them use more direct (faster) methods.
 
         // Get the file type
         let filename = file.split('/').pop();
@@ -217,13 +217,16 @@ const App = {
 
     },
 
+    /**
+     * Populate the sidebar and other non content places.
+     */
     load_side_content() {
 
-        App.read_file_into_element("content/logo.html", document.getElementById("logo"));
-        App.read_file_into_element("content/mast.txt", document.getElementById("mast"));
+        App.read_file_into_element(Config.contentpath + 'logo.html', document.getElementById("logo"));
+        App.read_file_into_element(Config.contentpath + 'mast.txt', document.getElementById("mast"));
         // TODO: Load topbar droper menus
 
-        App.read_file_into_element("content/sidenav.md", document.getElementById("sidenav"));
+        App.read_file_into_element(Config.contentpath + 'sidenav.md', document.getElementById("sidenav"));
 
         document.querySelector("nav#sidenav").onclick = (e) => {
 
@@ -231,7 +234,7 @@ const App = {
             console.log(e.target);
 
             const path = App.get_path_from_element(e.target);
-            App.read_path_into_element("content/" + path, document.getElementById("content"));
+            App.read_path_into_element(Config.contentpath + path, document.getElementById("content"));
         };
 
         //TODO: extract the pages from the list, to pull tooltips and other stuff
