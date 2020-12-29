@@ -8,3 +8,5 @@ title: Navigation
 * Group3
     * Group3a
 * test
+* [Link to test](#test)
+    * [A longer link to test page](#test)
