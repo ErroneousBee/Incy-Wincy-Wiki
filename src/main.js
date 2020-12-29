@@ -1,8 +1,9 @@
 const Config = {
+    title: 'Default Title',
     extension_precedence: ["md", "html", "htm", "txt"],
-    theme: "default",
-    home: "Home.md",
-    contentpath: "content/"
+    theme: 'default',
+    home: 'Home.md',
+    contentpath: 'content/'
 };
 
 const App = {
@@ -223,7 +224,9 @@ const App = {
     load_side_content() {
 
         App.read_file_into_element(Config.contentpath + 'logo.html', document.getElementById("logo"));
-        App.read_file_into_element(Config.contentpath + 'mast.txt', document.getElementById("mast"));
+
+        document.querySelector("div.mast div.title").innerHTML = Config.title;
+        
         // TODO: Load topbar droper menus
 
         App.read_file_into_element(Config.contentpath + 'sidenav.md', document.getElementById("sidenav"));
