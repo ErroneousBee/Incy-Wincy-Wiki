@@ -24,11 +24,24 @@ const App = {
     },
 
     /**
-     * Try and load a file by trying file extentions in a precedence order
+     * We have a thing to load, but no extention. Try and see what loads.
      * @param {string} pathname 
      */
-    get_file_extention(pathname) {
+    async get_file_extention(pathname) {
         // TODO: code here
+
+        for (const extn in Config.extension_precedence) {
+            await fetch(pathname + '.' + extn)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(response.statusText);
+                    }
+                }
+                )
+                .catch(e){
+                    continue;
+                }
+        }
         return pathname;
     },
 
@@ -58,7 +71,8 @@ const App = {
     },
 
     /**
-     * Look at the current URL and load the content based on that URL
+     * Look at the current URL and load the content based on that URL.
+     * Driven from an event listener.
      */
     load_content_from_url() {
 
