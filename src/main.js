@@ -112,7 +112,7 @@ const App = {
 
         console.log("From URL", url, path, !path);
 
-        App.read_path_into_element(Config.contentpath + path, document.getElementById("content"));
+        App.read_path_into_element(path, document.getElementById("content"));
 
     },
 
@@ -176,62 +176,64 @@ const App = {
     },
 
     /**
-     * Read a content file into the content element, update ant navbars along the way.
+     * Read content path into the content element, update any navbars along the way.
      * @param {*} file - fie name including extension and directory levels
      * @param {*} element - DOM element to put the content into
      */
-    read_path_into_element(file, element) {
+    read_path_into_element(path, element) {
 
         // Get the file type
-        let filename = file.split('/').pop();
-        let filetype = filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
-        if (filetype === "") {
-            filetype = "md";
-            file = file + "." + filetype;
-            filename = filename + "." + filetype;
+        const filename = path.split('/').pop();
+        const filetype = filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
+
+        const extn_list = [...Config.extension_precedence];
+        if (filetype !== "") {
+            extn_list.unshift(filetype);
+            path = path.substring(0, path.lastIndexOf("."));
         }
 
-        // Get the path for this file.
-        const pathparts = file.split('/');
-        pathparts.shift();
-        const path = pathparts.join("/").slice(0, -1 * (1 + filetype.length));
-        console.log("PATH=", path);
+        console.log("Loading", path, extn_list);
 
-        fetch(file)
+        // Config.extension_precedence
+        App.fetch_with_extention(Config.contentpath + path, extn_list)
             .then(response => {
+
                 if (!response.ok) {
                     throw new Error(response.statusText)
                 }
-                return response.text()
-            })
-            .then(text => {
+                console.log("Loaded", response);
 
-                console.log("Loaded", file, "type:", filetype, text);
+                const filename = response.url.split('/').pop();
+                const filetype = filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
 
-                switch (filetype) {
-                    case "htm":
-                    case "html":
-                        element.innerHTML = text;
-                        break;
+                response.text().then(text => {
 
-                    case "md": {
-                        const [html, json] = App.convert_markdown_page(text, file);
-                        console.log("markdown resp ==", html, json);
-                        element.innerHTML = html;
-                        break;
+                    switch (filetype) {
+                        case "htm":
+                        case "html":
+                            element.innerHTML = text;
+                            break;
+
+                        case "md": {
+                            const [html, json] = App.convert_markdown_page(text, response.url);
+                            console.log("markdown resp ==", html, json);
+                            // TODO: deal with json frontmatter
+                            element.innerHTML = html;
+                            break;
+                        }
+
+                        default:
+                            element.innerHTML = text;
+                            break;
+
                     }
-
-                    default:
-                        element.innerHTML = text;
-                        break;
-
-                }
+                });
 
                 App.set_url(path);
-
-            }).catch(e => {
+            })
+            .catch(e => {
                 console.error(e);
-                element.innerHTML = '<p class="error">' + e + '.</p><p>File: ' + file + '</p>';
+                element.innerHTML = '<p class="error">' + e + '.</p><p>Path: ' + path + '</p>';
             });
 
     },
@@ -276,7 +278,7 @@ const App = {
             console.log(e.target);
 
             const path = App.get_path_from_element(e.target);
-            App.read_path_into_element(Config.contentpath + path, document.getElementById("content"));
+            App.read_path_into_element(path, document.getElementById("content"));
         };
 
         //TODO: extract the pages from the list, to pull tooltips and other stuff
