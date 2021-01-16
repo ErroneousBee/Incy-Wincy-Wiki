@@ -22,6 +22,7 @@ const App = {
         // Now for the main event...
         App.load_content_from_url();
 
+
     },
 
     /**
@@ -29,21 +30,45 @@ const App = {
      * @param {string} pathname 
      */
     async get_file_extention(pathname) {
-        // TODO: code here
 
-        for (const extn in Config.extension_precedence) {
-            await fetch(pathname + '.' + extn)
+        // Config.extension_precedence
+        App.fetch_with_extention(Config.contentpath + pathname, Config.extension_precedence)
+            .then(response => {
+                console.log("Success", response)
+            })
+            .catch(e => {
+                console.log("Failed.", e)
+            });
+
+
+    },
+
+    /**
+     * Try to load a resource from one of the many possible extensions
+     * @param {String} path 
+     * @param {Array} extn_list 
+     */
+    fetch_with_extention(path, extn_list) {
+
+        const extn = extn_list.shift();
+
+        return new Promise((resolve, reject) => {
+            fetch(path + '.' + extn)
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error(response.statusText);
+                        if (extn_list.length === 0) {
+                            reject("Ran out of extensions to try");
+                            return;
+                        }
+                        return this.fetch_with_extention(path, extn_list);
                     }
-                }
-                )
-                .catch(e){
-                    continue;
-                }
-        }
-        return pathname;
+                    resolve(response);
+                })
+                .catch(e => {
+                    reject(e);
+                })
+        });
+
     },
 
     /**
@@ -240,7 +265,7 @@ const App = {
         App.read_file_into_element(Config.contentpath + 'logo.html', document.getElementById("logo"));
 
         document.querySelector("div.mast div.title").innerHTML = Config.title;
-        
+
         // TODO: Load topbar droper menus
 
         App.read_file_into_element(Config.contentpath + 'sidenav.md', document.getElementById("sidenav"));
