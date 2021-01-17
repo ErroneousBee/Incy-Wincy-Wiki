@@ -194,6 +194,9 @@ const App = {
 
         console.log("Loading", path, extn_list);
 
+        // Clear the subtitle
+        document.querySelector("div.mast div.title span.subtitle").innerHTML = "";
+
         // Config.extension_precedence
         App.fetch_with_extention(Config.contentpath + path, extn_list)
             .then(response => {
@@ -217,7 +220,10 @@ const App = {
                         case "md": {
                             const [html, json] = App.convert_markdown_page(text, response.url);
                             console.log("markdown resp ==", html, json);
-                            // TODO: deal with json frontmatter
+                            // Deal with json frontmatter
+                            if (json.title) {
+                                document.querySelector("div.mast div.title span.subtitle").innerHTML = json.title;
+                            }
                             element.innerHTML = html;
                             break;
                         }
@@ -266,7 +272,7 @@ const App = {
 
         App.read_file_into_element(Config.contentpath + 'logo.html', document.getElementById("logo"));
 
-        document.querySelector("div.mast div.title").innerHTML = Config.title;
+        document.querySelector("div.mast div.title span.title").innerHTML = Config.title;
 
         // TODO: Load topbar droper menus
 
