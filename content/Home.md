@@ -1,11 +1,13 @@
 ---
-title: Home Page
+title: Welcome
 ---
 
-This is Home.md
+This is Home.md, and is the default page. 
 
-# foo
+# This is a title
 
-This is a [link](#test) to the test page, or see [this][1].
+There is a [TODO list](#TODO) list for development yet to happen.
 
-[1]: #test
+This is a [link](#testarea/test) to the test page, or see [this][1].
+
+[1]: #testarea/test

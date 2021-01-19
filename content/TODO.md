@@ -10,6 +10,7 @@ Features to be developed
     * Show sublist from sidebar?
     * Show error? (prefer this)
 * Improve "Not Loaded" error page.
+* Make navbar width be correct, use flex? http://jsfiddle.net/avbj64u0/19/
 * Cache pages on load into a json structure
 * Mobile detection
 * CSS dropdown menus
