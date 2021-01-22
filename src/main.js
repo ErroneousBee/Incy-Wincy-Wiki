@@ -110,7 +110,7 @@ const App = {
             path = Config.home;
         }
 
-        console.log("From URL", url, path, !path);
+        console.log("From URL", url, path, !path, document.getElementById("content"));
 
         App.read_path_into_element(path, document.getElementById("content"));
 
@@ -195,7 +195,7 @@ const App = {
         console.log("Loading", path, extn_list);
 
         // Clear the subtitle
-        document.querySelector("div.mast div.title span.subtitle").innerHTML = "";
+        document.querySelector("header span.subtitle").innerHTML = "";
 
         // Config.extension_precedence
         App.fetch_with_extention(Config.contentpath + path, extn_list)
@@ -222,7 +222,7 @@ const App = {
                             console.log("markdown resp ==", html, json);
                             // Deal with json frontmatter
                             if (json.title) {
-                                document.querySelector("div.mast div.title span.subtitle").innerHTML = json.title;
+                               document.querySelector("header span.subtitle").innerHTML = json.title;
                             }
                             element.innerHTML = html;
                             break;
@@ -272,7 +272,7 @@ const App = {
 
         App.read_file_into_element(Config.contentpath + 'logo.html', document.getElementById("logo"));
 
-        document.querySelector("div.mast div.title span.title").innerHTML = Config.title;
+        document.querySelector("header span.title").innerHTML = Config.title;
 
         // TODO: Load topbar droper menus
 
