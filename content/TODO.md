@@ -21,6 +21,7 @@ Features to be developed
     * Search using a generated index
     * Searchusing external tools
     * Search by loading each file
+    * Search button is a link to a page that handles all search.
 * Build Tool
     * Comile search index
     * Generate all content into index.html templates
