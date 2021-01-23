@@ -67,15 +67,17 @@ body>main {
     >header {
         background-color: black;
         color: aliceblue;
+        position: relative;
 
         div.title {
             width: 100%;
-            height: 1.5em;
+            height: 1.7em;
 
             span.title {
                 text-indent: 5%;
                 font-size: x-large;
-                margin-right: 1em;
+                margin: 1px 1em 2px 1em;
+
             }
 
             span.subtitle {
@@ -87,11 +89,23 @@ body>main {
         div.toolbar {
             height: 2em;
             background-color: darkgreen;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
 
-            nav.menu {
+            nav.topmenu {
                 color: white;
                 display: inline-block;
+                bottom: 0;
+                position: absolute;
             }
+
+            .icon {
+                float: right;
+                margin: .5em;
+            }
+
+
 
         }
     }
