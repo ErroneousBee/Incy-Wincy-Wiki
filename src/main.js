@@ -3,6 +3,9 @@ const Config = {
     extension_precedence: ["md", "html", "htm", "txt"],
     theme: 'default',
     home: 'Home.md',
+    search: 'Search.md',
+    navigation_sidebar: 'Navigation.md',
+    navigation_topbar: 'Navigation.md',
     contentpath: 'content/'
 };
 
@@ -21,24 +24,6 @@ const App = {
 
         // Now for the main event...
         App.load_content_from_url();
-
-
-    },
-
-    /**
-     * We have a thing to load, but no extention. Try and see what loads.
-     * @param {string} pathname 
-     */
-    async get_file_extention(pathname) {
-
-        // Config.extension_precedence
-        App.fetch_with_extention(Config.contentpath + pathname, Config.extension_precedence)
-            .then(response => {
-                console.log("Success", response)
-            })
-            .catch(e => {
-                console.log("Failed.", e)
-            });
 
 
     },
@@ -157,7 +142,7 @@ const App = {
                         break;
 
                     case "md": {
-                        const [html, json] = App.convert_markdown_page(text, file);
+                        const [html, ] = App.convert_markdown_page(text, file);
                         element.innerHTML = html;
                         break;
                     }
@@ -274,10 +259,8 @@ const App = {
 
         document.querySelector("header span.title").innerHTML = Config.title;
 
-        // TODO: Load topbar droper menus
-
-        App.read_file_into_element(Config.contentpath + 'sidenav.md', document.getElementById("navigation_sidebar"));
-        App.read_file_into_element(Config.contentpath + 'headernav.md', document.getElementById("navigation_topbar"));
+        App.read_file_into_element(Config.contentpath + Config.navigation_sidebar , document.getElementById("navigation_sidebar"));
+        App.read_file_into_element(Config.contentpath + Config.navigation_topbar, document.getElementById("navigation_topbar"));
 
         document.querySelector("nav#navigation_sidebar").onclick = (e) => {
             const path = App.get_path_from_element(e.target);

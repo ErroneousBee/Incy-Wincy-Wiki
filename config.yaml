@@ -1,4 +1,9 @@
 home: Home.md
 search: Search.html
+navigation_sidebar: sidenav.md
+navigation_topbar: headernav.md
+theme: default
 title: A Web Page
 show_config: true
+extension_precedence: ["md", "html", "htm", "txt"]
+contentpath: 'content/'
