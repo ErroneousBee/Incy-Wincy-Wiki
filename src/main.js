@@ -222,7 +222,7 @@ const App = {
                             console.log("markdown resp ==", html, json);
                             // Deal with json frontmatter
                             if (json.title) {
-                               document.querySelector("header span.subtitle").innerHTML = json.title;
+                                document.querySelector("header span.subtitle").innerHTML = json.title;
                             }
                             element.innerHTML = html;
                             break;
@@ -298,18 +298,29 @@ const App = {
      */
     get_path_from_element(el, acc) {
 
-        console.log('xx', el, acc, (!acc));
-        if (el.tagName === "NAV") {
-            return acc;
-        }
-        const elp = el.parentElement.parentElement;
-        const pathpart = el.firstChild.nodeValue.trim();
+        el = el.closest("li, nav");
 
-        if (!acc) {
-            return App.get_path_from_element(elp, pathpart);
+        // Get the text that forms part of this path from the href or the text
+        let pathpart = '';
+        const els = [...el.children].filter((el) => el.tagName === "A" && el.hasAttribute("href"));
+        if (els.length > 0) {
+            pathpart = els[0].getAttribute("href").substring(1);
         } else {
-            return App.get_path_from_element(elp, pathpart + "/" + acc);
+            pathpart = el.firstChild.nodeValue.trim();
         }
+        if (acc) {
+            pathpart = pathpart + "/" + acc;
+        }
+
+        // navigate up to the parent <li> or <nav> TODO
+        const elp = el.parentElement.closest("li, nav");
+
+        if (elp.tagName === "NAV") {
+            return pathpart;
+        }
+
+        return App.get_path_from_element(elp, pathpart);
+
     }
 
 };
