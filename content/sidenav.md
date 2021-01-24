@@ -1,5 +1,6 @@
 ---
 title: Navigation
+comment: No external links work here ( E.g. cannot navigate to http://example.com )
 ---
 * Home
 * [TODO List](#TODO)
@@ -10,5 +11,5 @@ title: Navigation
     * Group3
         * Group3a
     * test
-    * [Link to test](#testarea/test)
-    * [A longer link to test page](#testarea/test)
+    * [Link to test](#test)
+    * [A fully qualified link to test](#/testarea/test)

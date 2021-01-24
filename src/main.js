@@ -306,12 +306,17 @@ const App = {
         let pathpart = '';
         const els = [...el.children].filter((el) => el.tagName === "A" && el.hasAttribute("href"));
         if (els.length > 0) {
-            pathpart = els[0].getAttribute("href").substring(1);
+            pathpart = els[0].getAttribute("href").slice(1);
         } else {
             pathpart = el.firstChild.nodeValue.trim();
         }
         if (acc) {
             pathpart = pathpart + "/" + acc;
+        }
+
+        // Fully qualified path indicated by leading slash.
+        if ( pathpart.slice(0,1) === "/") {
+            return pathpart;
         }
 
         // navigate up to the parent <li> or <nav> TODO
