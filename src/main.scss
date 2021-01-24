@@ -124,7 +124,7 @@ article {
 
 
 
-nav.sidenav {
+#navigation_sidebar {
     background-color: black;
     color: red;
     height: 100%;
@@ -144,6 +144,45 @@ nav.sidenav {
                 text-decoration: none;
                 color: unset;
             }
+        }
+
+
+    }
+}
+
+#navigation_topbar {
+    height: 100%;
+
+    >ul {
+        padding: 0px;
+        margin: 0px;
+        height: 100%;
+        list-style: none;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+
+        >li {
+            text-align: center;
+            flex: 1 1 auto;
+            padding: 5px 1em;
+            height: 100%;
+
+            a {
+                cursor: pointer;
+                text-decoration: none;
+                color: unset;
+            }
+
+            ul {
+                display: none;
+            }
+        }
+
+        >li:hover {
+            background-color:  red;
+            color: black;
+
         }
 
 

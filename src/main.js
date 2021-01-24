@@ -276,13 +276,15 @@ const App = {
 
         // TODO: Load topbar droper menus
 
-        App.read_file_into_element(Config.contentpath + 'sidenav.md', document.getElementById("sidenav"));
+        App.read_file_into_element(Config.contentpath + 'sidenav.md', document.getElementById("navigation_sidebar"));
+        App.read_file_into_element(Config.contentpath + 'headernav.md', document.getElementById("navigation_topbar"));
 
-        document.querySelector("nav#sidenav").onclick = (e) => {
+        document.querySelector("nav#navigation_sidebar").onclick = (e) => {
+            const path = App.get_path_from_element(e.target);
+            App.read_path_into_element(path, document.getElementById("content"));
+        };
 
-            // TODO: CSS select and hover and open and all the effects
-            console.log(e.target);
-
+        document.querySelector("nav#navigation_topbar").onclick = (e) => {
             const path = App.get_path_from_element(e.target);
             App.read_path_into_element(path, document.getElementById("content"));
         };
