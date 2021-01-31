@@ -6,8 +6,12 @@ html {
 * {
     box-sizing: border-box;
 }
+.svg-icon {
+    height: 1em;
+    width: 1em;
+}
 
-// Grid layout 
+// Grid layout
 body {
     height: 100%;
     overflow: hidden;
@@ -15,77 +19,135 @@ body {
     font-family: sans-serif;
 
     // Hide the icon definitions
-    >svg {
+    > svg {
         display: none;
     }
 
-    >main.grid {
+    > main.grid {
         width: 100%;
         display: grid;
-        grid-gap: 5px;
+        grid-gap: 0px;
         grid-template-columns: 15% auto;
         grid-template-rows: 5em auto;
         grid-template-areas:
             "logo    header"
             "sidebar content";
 
-
-        >.logo {
+        > .logo {
             grid-area: logo;
         }
 
-        >.sidenav {
+        > .sidenav {
             grid-area: sidebar;
         }
 
-        >header {
+        > header {
             grid-area: header;
         }
 
-        >article {
+        > article {
             grid-area: content;
         }
-
     }
 }
 
+// Rounding and shaping of the grid components
+body > main {
+    height: 100%;
+
+    > .logo {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        padding-left: 2em;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    > nav.sidenav {
+        height: 100%;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        margin-right: 5px;
+        margin-left: 5px;
+
+        ul {
+            padding: 0px;
+            list-style: none;
+
+            li {
+                margin-right: 1em;
+                margin-left: 1em;
+                cursor: pointer;
+
+                a {
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: unset;
+                }
+            }
+        }
+    }
+
+    article {
+        overflow-y: auto;
+    }
+
+    > header {
+        border-radius: 25px;
+        position: relative;
+        margin-right: 5px;
+
+        div.title {
+            width: 100%;
+            height: 1.7em;
+        }
+
+        div.toolbar {
+            height: 2em;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+
+            nav.topmenu {
+                display: inline-block;
+                bottom: 0;
+                position: absolute;
+            }
+
+            .icon {
+                float: right;
+                margin: 0.5em;
+            }
+        }
+    }
+}
 
 // Colours
-body>main {
-
-    height: 100%;
+body > main {
     color: white;
     background-color: azure;
 
-    >.logo {
+    > .logo {
         background-color: black;
     }
 
-    >nav.sidenav {
-        height: 100%;
-        border-radius: 25px;
+    > nav.sidenav {
         background-color: black;
-
     }
 
     article {
         color: black;
-        overflow-y: auto;
     }
 
-    >header {
+    > header {
         background-color: black;
         color: aliceblue;
-        border-radius: 25px;
 
         div.title {
-            width: 100%;
-            height: 1.5em;
-
             span.title {
                 text-indent: 5%;
                 font-size: x-large;
-                margin-right: 1em;
+                margin: 1px 1em 2px 1em;
             }
 
             span.subtitle {
@@ -95,47 +157,49 @@ body>main {
         }
 
         div.toolbar {
-            height: 2em;
             background-color: darkgreen;
 
-            nav.menu {
+            nav.topmenu {
                 color: white;
-                display: inline-block;
             }
-
         }
-    
     }
 }
 
-.svg-icon {
-    height: 1em;
-    width: 1em;
-}
-
-
-
-
 // Internal layout of the side navbar
-nav.sidenav {
 
-    ul {
-        //display: inline-flex;
+#navigation_topbar {
+    height: 100%;
+
+    > ul {
         padding: 0px;
+        margin: 0px;
+        height: 100%;
         list-style: none;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
 
-        li {
-            margin-right: 1em;
-            margin-left: 1em;
-            cursor: pointer;
+        > li {
+            text-align: center;
+            flex: 1 1 auto;
+            padding: 5px 1em;
+            height: 100%;
 
             a {
                 cursor: pointer;
                 text-decoration: none;
                 color: unset;
             }
+
+            ul {
+                display: none;
+            }
         }
 
-
+        > li:hover {
+            background-color: red;
+            color: black;
+        }
     }
 }
