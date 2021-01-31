@@ -2,12 +2,12 @@ html {
     height: 100%;
 }
 
+// Resets and defaults.
 * {
-    /*enables flex content for its children*/
     box-sizing: border-box;
 }
 
-/* Resets and some grid making */
+// Grid layout 
 body {
     height: 100%;
     overflow: hidden;
@@ -22,9 +22,9 @@ body {
     >main.grid {
         width: 100%;
         display: grid;
-        grid-gap: 0px;
+        grid-gap: 5px;
         grid-template-columns: 15% auto;
-        grid-template-rows: 4em auto;
+        grid-template-rows: 5em auto;
         grid-template-areas:
             "logo    header"
             "sidebar content";
@@ -54,19 +54,29 @@ body {
 body>main {
 
     height: 100%;
+    color: white;
+    background-color: azure;
 
     >.logo {
         background-color: black;
     }
 
-    >.sidenav {
+    >nav.sidenav {
         height: 100%;
-        border: 1px solid red;
+        border-radius: 25px;
+        background-color: black;
+
+    }
+
+    article {
+        color: black;
+        overflow-y: auto;
     }
 
     >header {
         background-color: black;
         color: aliceblue;
+        border-radius: 25px;
 
         div.title {
             width: 100%;
@@ -94,6 +104,7 @@ body>main {
             }
 
         }
+    
     }
 }
 
@@ -102,18 +113,11 @@ body>main {
     width: 1em;
 }
 
-article {
-    background-color: azure;
-    color: black;
-    overflow-y: auto;
-}
 
 
 
+// Internal layout of the side navbar
 nav.sidenav {
-    background-color: black;
-    color: red;
-    height: 100%;
 
     ul {
         //display: inline-flex;
