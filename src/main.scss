@@ -118,11 +118,41 @@ body > main {
                 float: right;
                 margin: 0.5em;
             }
+
+            nav#navigation_topbar {
+                height: 100%;
+
+                > ul {
+                    padding: 0px;
+                    margin: 0px;
+                    height: 100%;
+                    list-style: none;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+
+                    > li {
+                        text-align: center;
+                        flex: 1 1 auto;
+                        padding: 5px 1em;
+                        height: 100%;
+
+                        a {
+                            text-decoration: none;
+                            color: unset;
+                        }
+
+                        ul {
+                            display: none;
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
-// Colours
+// Colours and font sizes
 body > main {
     color: white;
     background-color: azure;
@@ -144,10 +174,15 @@ body > main {
         color: aliceblue;
 
         div.title {
+
+            height: 3em;
+            
             span.title {
                 text-indent: 5%;
                 font-size: x-large;
-                margin: 1px 1em 2px 1em;
+                margin: 0px 1em;
+                line-height: 2em; 
+                vertical-align: middle; 
             }
 
             span.subtitle {
@@ -159,47 +194,32 @@ body > main {
         div.toolbar {
             background-color: darkgreen;
 
-            nav.topmenu {
+            > nav {
                 color: white;
-            }
-        }
-    }
-}
 
-// Internal layout of the side navbar
+                > ul {
+                    padding: 0px;
+                    margin: 0px;
+                    height: 100%;
+                    list-style: none;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
 
-#navigation_topbar {
-    height: 100%;
-
-    > ul {
-        padding: 0px;
-        margin: 0px;
-        height: 100%;
-        list-style: none;
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: row;
-
-        > li {
-            text-align: center;
-            flex: 1 1 auto;
-            padding: 5px 1em;
-            height: 100%;
-
-            a {
-                cursor: pointer;
-                text-decoration: none;
-                color: unset;
+                    > li:hover {
+                        cursor: pointer;
+                        background-color: red;
+                        color: black;
+                    }
+                }
             }
 
-            ul {
-                display: none;
+            .icon {
+                fill: black;
             }
-        }
-
-        > li:hover {
-            background-color: red;
-            color: black;
+            .icon:hover {
+                fill: white;
+            }
         }
     }
 }
