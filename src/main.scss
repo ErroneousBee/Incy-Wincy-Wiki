@@ -159,24 +159,26 @@ body>main {
 
 // Colours and font sizes
 body>main {
-    color: white;
-    background-color: azure;
+    color:  var(--main-color);
+    background-color: var(--main-background-color);
 
     >.logo {
-        background-color: black;
+        background-color: var(--sidebar-background-color);
     }
 
     >nav.sidenav {
-        background-color: black;
+        color: var(--sidebar-color);
+        background-color: var(--sidebar-background-color);
     }
 
     article {
-        color: black;
+        color: var(--main-color);
+        background-color: var(--main-background-color);    
     }
 
     >header {
-        background-color: black;
-        color: aliceblue;
+        color: var(--header-color);
+        background-color: var(--header-background-color);
 
         div.title {
 
@@ -197,10 +199,10 @@ body>main {
         }
 
         div.toolbar {
-            background-color: darkgreen;
+            color: var(--topbar-color);
+            background-color: var(--topbar-background-color);
 
             >nav {
-                color: white;
 
                 >ul {
                     padding: 0px;
@@ -213,8 +215,8 @@ body>main {
 
                     >li:hover {
                         cursor: pointer;
-                        background-color: red;
-                        color: black;
+                        color: var(--topbar-color-hover);
+                        background-color: var(--topbar-background-color-hover);
                     }
                 }
             }
