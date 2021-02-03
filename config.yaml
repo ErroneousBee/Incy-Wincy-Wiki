@@ -1,9 +1,10 @@
 home: Home.md
 search: Search.html
+navigation_logo: logo.html
 navigation_sidebar: sidenav.md
 navigation_topbar: headernav.md
 theme: default
-title: A Web Page
+title: PortaWiki Demo
 show_config: true
 extension_precedence: ["md", "html", "htm", "txt"]
 contentpath: 'content/'

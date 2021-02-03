@@ -11,5 +11,5 @@ comment: No external links work here ( E.g. cannot navigate to http://example.co
     * Group3
         * Group3a
     * test
-    * [Link to test](#test)
-    * [A fully qualified link to test](#/testarea/test)
+    * [Relative link to test](#test)
+    * [Fully qualified link to test](#/testarea/test)
