@@ -177,7 +177,7 @@ const App = {
             path = path.substring(0, path.lastIndexOf("."));
         }
 
-        console.log("Loading", path, extn_list);
+        console.trace("Loading", path, extn_list);
 
         // Clear the subtitle
         document.querySelector("header span.subtitle").innerHTML = "";
@@ -255,7 +255,7 @@ const App = {
      */
     load_side_content() {
 
-        App.read_file_into_element(Config.contentpath + 'logo.html', document.getElementById("logo"));
+        App.read_file_into_element(Config.contentpath + Config.navigation_logo, document.getElementById("logo"));
 
         document.querySelector("header span.title").innerHTML = Config.title;
 
@@ -263,16 +263,16 @@ const App = {
         App.read_file_into_element(Config.contentpath + Config.navigation_topbar, document.getElementById("navigation_topbar"));
 
         document.querySelector("nav#navigation_sidebar").onclick = (e) => {
+            e.preventDefault();
             const path = App.get_path_from_element(e.target);
             App.read_path_into_element(path, document.getElementById("content"));
         };
 
         document.querySelector("nav#navigation_topbar").onclick = (e) => {
+            e.preventDefault();
             const path = App.get_path_from_element(e.target);
             App.read_path_into_element(path, document.getElementById("content"));
         };
-
-        //TODO: extract the pages from the list, to pull tooltips and other stuff
 
     },
 
@@ -299,7 +299,7 @@ const App = {
 
         // Fully qualified path indicated by leading slash.
         if ( pathpart.slice(0,1) === "/") {
-            return pathpart;
+            return pathpart.slice(1) ;
         }
 
         // navigate up to the parent <li> or <nav> TODO
