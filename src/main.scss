@@ -74,15 +74,20 @@ body>main {
         border-bottom-right-radius: 25px;
         margin-right: 5px;
         margin-left: 5px;
+        padding-right: 1em;
 
         ul {
-            padding: 0px;
+            padding-left: 1em;
             list-style: none;
 
             li {
-                margin-right: 1em;
-                margin-left: 1em;
+                margin: 0;
                 cursor: pointer;
+
+                span.navline{
+                    display: block;
+                    padding: 0em 3px;
+                }
 
                 a {
                     cursor: pointer;
@@ -169,6 +174,11 @@ body>main {
     >nav.sidenav {
         color: var(--sidebar-color);
         background-color: var(--sidebar-background-color);
+
+        li > span.navline:hover{
+            color: var(--sidebar-color-hover);
+            background-color: var(--sidebar-background-color-hover);
+        }
     }
 
     article {

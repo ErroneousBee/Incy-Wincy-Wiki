@@ -124,7 +124,7 @@ const App = {
         let filename = file.split('/').pop();
         let filetype = filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
 
-        fetch(file)
+        return fetch(file)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(response.statusText)
@@ -259,11 +259,28 @@ const App = {
 
         document.querySelector("header span.title").innerHTML = Config.title;
 
-        App.read_file_into_element(Config.contentpath + Config.navigation_sidebar , document.getElementById("navigation_sidebar"));
+        // Load and interfere with the side navbar
+        App.read_file_into_element(Config.contentpath + Config.navigation_sidebar, document.getElementById("navigation_sidebar"))
+            .then(() => {
+                // Insert spans of the sidebar texts to allow hover niceness
+                const navlinodes = document.querySelector("nav#navigation_sidebar").querySelectorAll("li");
+                for (const node of navlinodes) {
+                    const child = node.firstChild;
+                    const span = document.createElement("span");
+                    span.appendChild(child.cloneNode(true));
+                    span.classList.add("navline");
+                    child.replaceWith(span);
+                }
+            });
+
         App.read_file_into_element(Config.contentpath + Config.navigation_topbar, document.getElementById("navigation_topbar"));
 
+        // Click in the nav sidebar
         document.querySelector("nav#navigation_sidebar").onclick = (e) => {
             e.preventDefault();
+
+            // If its got li children, fix open accordian
+
             const path = App.get_path_from_element(e.target);
             App.read_path_into_element(path, document.getElementById("content"));
         };
@@ -284,25 +301,26 @@ const App = {
     get_path_from_element(el, acc) {
 
         el = el.closest("li, nav");
+        const span_el = el.firstChild;
 
         // Get the text that forms part of this path from the href or the text
         let pathpart = '';
-        const els = [...el.children].filter((el) => el.tagName === "A" && el.hasAttribute("href"));
+        const els = [...span_el.children].filter((elx) => elx.tagName === "A" && elx.hasAttribute("href"));
         if (els.length > 0) {
             pathpart = els[0].getAttribute("href").slice(1);
         } else {
-            pathpart = el.firstChild.nodeValue.trim();
+            pathpart = span_el.firstChild.nodeValue.trim();
         }
         if (acc) {
             pathpart = pathpart + "/" + acc;
         }
 
         // Fully qualified path indicated by leading slash.
-        if ( pathpart.slice(0,1) === "/") {
-            return pathpart.slice(1) ;
+        if (pathpart.slice(0, 1) === "/") {
+            return pathpart.slice(1);
         }
 
-        // navigate up to the parent <li> or <nav> TODO
+        // navigate up to the parent <li> or <nav>
         const elp = el.parentElement.closest("li, nav");
 
         if (elp.tagName === "NAV") {
