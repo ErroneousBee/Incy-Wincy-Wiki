@@ -287,6 +287,9 @@ const App = {
 
         document.querySelector("nav#navigation_topbar").onclick = (e) => {
             e.preventDefault();
+
+            console.log("XXX", e.target);
+
             const path = App.get_path_from_element(e.target);
             App.read_path_into_element(path, document.getElementById("content"));
         };
@@ -301,7 +304,12 @@ const App = {
     get_path_from_element(el, acc) {
 
         el = el.closest("li, nav");
-        const span_el = el.firstChild;
+
+        // Identify where the nav info is
+        let span_el = el;
+        if (el.firstChild.tagName === "SPAN") {
+            span_el = el.firstChild;
+        }
 
         // Get the text that forms part of this path from the href or the text
         let pathpart = '';
