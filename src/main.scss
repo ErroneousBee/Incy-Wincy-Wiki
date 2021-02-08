@@ -169,6 +169,12 @@ body>main {
     >nav.sidenav {
         color: var(--sidebar-color);
         background-color: var(--sidebar-background-color);
+
+        li:hover {
+            color:var(--sidebar-color-hover);
+            background-color: var(--sidebar-background-color-hover);
+
+        }
     }
 
     article {
