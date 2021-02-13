@@ -295,18 +295,14 @@ const App = {
 
                 // Toggle clicked, turn off all siblings
                 const isopen = li.lastElementChild.classList.contains("open");
-
-                const siblings = li.closest("ul").querySelectorAll("li>ul.open");
-                for (const sibling of siblings) {
-                    sibling.classList.remove("open");
-                }
-
+                li.closest("ul").querySelectorAll("li>ul.open").forEach(sibling => sibling.classList.remove("open"));
+               
                 if (!isopen) {
                     li.lastElementChild.classList.add("open");
                 }
 
             } else {
-                document.querySelectorAll("ul.open").classList.remove("open");
+                document.querySelectorAll("ul.open").forEach(sibling => sibling.classList.remove("open"));
                 const path = App.get_path_from_element(li);
                 App.read_path_into_element(path, document.getElementById("content"));
             }
