@@ -142,7 +142,7 @@ const App = {
                         break;
 
                     case "md": {
-                        const [html, ] = App.convert_markdown_page(text, file);
+                        const [html,] = App.convert_markdown_page(text, file);
                         element.innerHTML = html;
                         break;
                     }
@@ -288,10 +288,20 @@ const App = {
         document.querySelector("nav#navigation_topbar").onclick = (e) => {
             e.preventDefault();
 
-            console.log("XXX", e.target);
+            const li = e.target.closest("li");
+            console.log("XXX", e.target, li);
 
-            const path = App.get_path_from_element(e.target);
-            App.read_path_into_element(path, document.getElementById("content"));
+            // If we have a "ul" in here, its a further menu
+
+            if (li.lastElementChild && li.lastElementChild.tagName === "UL") {
+
+                // Open child submenu
+                li.lastElementChild.classList.add("open");
+
+            } else {
+                const path = App.get_path_from_element(li);
+                App.read_path_into_element(path, document.getElementById("content"));
+            }
         };
 
     },
