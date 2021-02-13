@@ -127,10 +127,12 @@ body > main {
             .icon {
                 float: right;
                 margin: 0.5em;
+                cursor: pointer;
             }
 
             nav#navigation_topbar {
                 height: 100%;
+                padding-bottom: 2px;
 
                 ul > li:hover > ul {
                     display: flex;
