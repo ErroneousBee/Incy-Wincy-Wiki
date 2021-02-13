@@ -142,7 +142,7 @@ const App = {
                         break;
 
                     case "md": {
-                        const [html, ] = App.convert_markdown_page(text, file);
+                        const [html,] = App.convert_markdown_page(text, file);
                         element.innerHTML = html;
                         break;
                     }
@@ -287,8 +287,25 @@ const App = {
 
         document.querySelector("nav#navigation_topbar").onclick = (e) => {
             e.preventDefault();
-            const path = App.get_path_from_element(e.target);
-            App.read_path_into_element(path, document.getElementById("content"));
+
+            const li = e.target.closest("li");
+
+            // If we have a "ul" in here, its a further menu
+            if (li.lastElementChild && li.lastElementChild.tagName === "UL") {
+
+                // Toggle clicked, turn off all siblings
+                const isopen = li.lastElementChild.classList.contains("open");
+                li.closest("ul").querySelectorAll("li>ul.open").forEach(sibling => sibling.classList.remove("open"));
+               
+                if (!isopen) {
+                    li.lastElementChild.classList.add("open");
+                }
+
+            } else {
+                document.querySelectorAll("ul.open").forEach(sibling => sibling.classList.remove("open"));
+                const path = App.get_path_from_element(li);
+                App.read_path_into_element(path, document.getElementById("content"));
+            }
         };
 
     },
@@ -301,7 +318,12 @@ const App = {
     get_path_from_element(el, acc) {
 
         el = el.closest("li, nav");
-        const span_el = el.firstChild;
+
+        // Identify where the nav info is
+        let span_el = el;
+        if (el.firstChild.tagName === "SPAN") {
+            span_el = el.firstChild;
+        }
 
         // Get the text that forms part of this path from the href or the text
         let pathpart = '';

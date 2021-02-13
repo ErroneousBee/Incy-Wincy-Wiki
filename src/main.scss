@@ -20,11 +20,11 @@ body {
     font-family: sans-serif;
 
     // Hide the icon definitions
-    >svg {
+    > svg {
         display: none;
     }
 
-    >main.grid {
+    > main.grid {
         width: 100%;
         display: grid;
         grid-gap: 0px;
@@ -34,29 +34,29 @@ body {
             "logo    header"
             "sidebar content";
 
-        >.logo {
+        > .logo {
             grid-area: logo;
         }
 
-        >.sidenav {
+        > .sidenav {
             grid-area: sidebar;
         }
 
-        >header {
+        > header {
             grid-area: header;
         }
 
-        >article {
+        > article {
             grid-area: content;
         }
     }
 }
 
 // Rounding and shaping of the grid components
-body>main {
+body > main {
     height: 100%;
 
-    >.logo {
+    > .logo {
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
         margin-right: 5px;
@@ -68,7 +68,7 @@ body>main {
         }
     }
 
-    >nav.sidenav {
+    > nav.sidenav {
         height: 100%;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
@@ -85,7 +85,7 @@ body>main {
                 margin: 0;
                 cursor: pointer;
 
-                span.navline{
+                span.navline {
                     display: block;
                     padding: 0em 3px;
                 }
@@ -103,7 +103,7 @@ body>main {
         overflow-y: auto;
     }
 
-    >header {
+    > header {
         border-radius: 25px;
         position: relative;
         margin-right: 5px;
@@ -128,35 +128,53 @@ body>main {
             .icon {
                 float: right;
                 margin: 0.5em;
+                cursor: pointer;
             }
 
             nav#navigation_topbar {
                 height: 100%;
+                padding-bottom: 2px;
 
-                >ul {
+                ul > li:hover > ul {
+                    display: flex;
+                    list-style: none;
+                    margin-left: -1em;
+                }
+
+                ul > li> ul.open {
+                    display: flex;
+                    list-style: none;
+                    margin-left: -1em;
+                }
+
+                ul {
                     padding: 0px;
                     margin: 0px;
+                    margin-top: 2px;
                     height: 100%;
                     list-style: none;
                     display: flex;
                     flex-wrap: nowrap;
                     flex-direction: row;
 
-                    >li {
+                    > li {
                         text-align: center;
                         flex: 1 1 auto;
                         padding: 5px 1em;
                         height: 100%;
 
+                        ul {
+                            display: none;
+                            position: absolute;
+                        }
+
                         a {
                             text-decoration: none;
                             color: unset;
                         }
-
-                        ul {
-                            display: none;
-                        }
                     }
+
+  
                 }
             }
         }
@@ -164,19 +182,19 @@ body>main {
 }
 
 // Colours and font sizes
-body>main {
-    color:  var(--main-color);
+body > main {
+    color: var(--main-color);
     background-color: var(--main-background-color);
 
-    >.logo {
+    > .logo {
         background-color: var(--sidebar-background-color);
     }
 
-    >nav.sidenav {
+    > nav.sidenav {
         color: var(--sidebar-color);
         background-color: var(--sidebar-background-color);
 
-        li > span.navline:hover{
+        li > span.navline:hover {
             color: var(--sidebar-color-hover);
             background-color: var(--sidebar-background-color-hover);
         }
@@ -184,15 +202,14 @@ body>main {
 
     article {
         color: var(--main-color);
-        background-color: var(--main-background-color);    
+        background-color: var(--main-background-color);
     }
 
-    >header {
+    > header {
         color: var(--header-color);
         background-color: var(--header-background-color);
 
         div.title {
-
             height: 3em;
 
             span.title {
@@ -213,18 +230,12 @@ body>main {
             color: var(--topbar-color);
             background-color: var(--topbar-background-color);
 
-            >nav {
+            > nav {
+                ul {
+                    color: var(--topbar-color);
+                    background-color: var(--topbar-background-color);
 
-                >ul {
-                    padding: 0px;
-                    margin: 0px;
-                    height: 100%;
-                    list-style: none;
-                    display: flex;
-                    flex-wrap: nowrap;
-                    flex-direction: row;
-
-                    >li:hover {
+                    > li:hover {
                         cursor: pointer;
                         color: var(--topbar-color-hover);
                         background-color: var(--topbar-background-color-hover);
