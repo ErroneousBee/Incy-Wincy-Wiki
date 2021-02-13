@@ -302,7 +302,7 @@ const App = {
                 }
 
             } else {
-                document.querySelectorAll("ul.open").forEach(sibling => sibling.classList.remove("open"));
+                document.querySelectorAll("nav#navigation_topbar ul.open").forEach(sibling => sibling.classList.remove("open"));
                 const path = App.get_path_from_element(li);
                 App.read_path_into_element(path, document.getElementById("content"));
             }
