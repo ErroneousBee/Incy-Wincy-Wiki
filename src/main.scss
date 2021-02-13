@@ -12,6 +12,8 @@ html {
     width: 1em;
 }
 
+
+
 // Grid layout
 body {
     height: 100%;
@@ -20,11 +22,11 @@ body {
     font-family: sans-serif;
 
     // Hide the icon definitions
-    > svg {
+    >svg {
         display: none;
     }
 
-    > main.grid {
+    >main.grid {
         width: 100%;
         display: grid;
         grid-gap: 0px;
@@ -34,29 +36,29 @@ body {
             "logo    header"
             "sidebar content";
 
-        > .logo {
+        >.logo {
             grid-area: logo;
         }
 
-        > .sidenav {
+        >.sidenav {
             grid-area: sidebar;
         }
 
-        > header {
+        >header {
             grid-area: header;
         }
 
-        > article {
+        >article {
             grid-area: content;
         }
     }
 }
 
 // Rounding and shaping of the grid components
-body > main {
+body>main {
     height: 100%;
 
-    > .logo {
+    >.logo {
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
         margin-right: 5px;
@@ -68,7 +70,7 @@ body > main {
         }
     }
 
-    > nav.sidenav {
+    >nav.sidenav {
         height: 100%;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
@@ -103,7 +105,7 @@ body > main {
         overflow-y: auto;
     }
 
-    > header {
+    >header {
         border-radius: 25px;
         position: relative;
         margin-right: 5px;
@@ -135,13 +137,13 @@ body > main {
                 height: 100%;
                 padding-bottom: 2px;
 
-                ul > li:hover > ul {
+                ul>li:hover>ul {
                     display: flex;
                     list-style: none;
                     margin-left: -1em;
                 }
 
-                ul > li> ul.open {
+                ul>li>ul.open {
                     display: flex;
                     list-style: none;
                     margin-left: -1em;
@@ -157,7 +159,7 @@ body > main {
                     flex-wrap: nowrap;
                     flex-direction: row;
 
-                    > li {
+                    >li {
                         text-align: center;
                         flex: 1 1 auto;
                         padding: 5px 1em;
@@ -174,27 +176,57 @@ body > main {
                         }
                     }
 
-  
+
                 }
             }
         }
     }
 }
 
+// @media screen and (hover:none) and (max-device-width: 479px) and (orientation: portrait) {
+    @media screen and (max-device-width: 480px) and (orientation: portrait) {
+        body {
+    
+            >main.grid {
+    
+                grid-template-columns: auto;
+                grid-template-rows: 5em auto;
+                grid-template-areas:
+                    "header"
+                    "content";
+
+                    >.logo {
+                        display: none !important
+                    }
+                
+                    >nav.sidenav {
+                        display: none !important;
+                    }
+
+                    >article {
+                        padding: 0px 1em;
+                    }
+
+                }
+
+
+        }
+    }
+
 // Colours and font sizes
-body > main {
+body>main {
     color: var(--main-color);
     background-color: var(--main-background-color);
 
-    > .logo {
+    >.logo {
         background-color: var(--sidebar-background-color);
     }
 
-    > nav.sidenav {
+    >nav.sidenav {
         color: var(--sidebar-color);
         background-color: var(--sidebar-background-color);
 
-        li > span.navline:hover {
+        li>span.navline:hover {
             color: var(--sidebar-color-hover);
             background-color: var(--sidebar-background-color-hover);
         }
@@ -205,7 +237,7 @@ body > main {
         background-color: var(--main-background-color);
     }
 
-    > header {
+    >header {
         color: var(--header-color);
         background-color: var(--header-background-color);
 
@@ -230,12 +262,12 @@ body > main {
             color: var(--topbar-color);
             background-color: var(--topbar-background-color);
 
-            > nav {
+            >nav {
                 ul {
                     color: var(--topbar-color);
                     background-color: var(--topbar-background-color);
 
-                    > li:hover {
+                    >li:hover {
                         cursor: pointer;
                         color: var(--topbar-color-hover);
                         background-color: var(--topbar-background-color-hover);
