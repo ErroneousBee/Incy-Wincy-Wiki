@@ -140,6 +140,12 @@ body > main {
                     margin-left: -1em;
                 }
 
+                ul > li> ul.open {
+                    display: flex;
+                    list-style: none;
+                    margin-left: -1em;
+                }
+
                 ul {
                     padding: 0px;
                     margin: 0px;
