@@ -5,8 +5,8 @@ title: PortaWiki Demo
 # Set the home page, this page is loaded if no specific path is given.
 home: Home.md
 
-# Choose a theme, which will correspond to a file in the themes/ folder
-theme: default
+# Choose a theme, which will correspond to a folder in the themes/ folder. This folder should contain css files such as colors.css and layout.css
+theme: light
 
 # Where should the index page look for "Home.md", "sidenav.md" and all the other pages?
 contentpath: 'content/'
