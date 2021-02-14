@@ -6,7 +6,7 @@ title: PortaWiki Demo
 home: Home.md
 
 # Choose a theme, which will correspond to a folder in the themes/ folder. This folder should contain css files such as colors.css and layout.css
-theme: light
+theme: default
 
 # Where should the index page look for "Home.md", "sidenav.md" and all the other pages?
 contentpath: 'content/'
@@ -27,3 +27,7 @@ extension_precedence: ["md", "html", "htm", "txt"]
 # This is the search tool, which is an html page behind the "search" link
 # It hasnt been developed yet!
 search: Search.html
+
+# This is the user config and other toos page, which is an html page behind the "hamburger" link
+# It hasnt been developed yet!
+search: Config.html
