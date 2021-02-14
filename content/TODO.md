@@ -9,14 +9,13 @@ Features to be developed
     * Show sublist from sidebar?
     * Show error? (prefer this)
 * Improve "Not Loaded" error page.
+* Make Yaml errors visible, or at least less obscure in the console.
 * Make navbar width be correct, use flex? http://jsfiddle.net/avbj64u0/19/
 * Cache pages on load into a json structure
-* Mobile detection
 * CSS dropdown menus
     * Make sidebar have accordion abilities
-    * Make topnav drop down a bar layer
+    * Topbar could cascade better
 * Highlight current sidebar location from URL
-* Theming ability
 * Search 
     * Search Input/icon
     * Search using a generated index

@@ -1,0 +1,17 @@
+:root {
+    --main-color: black;
+    --main-background-color: aliceblue;
+
+    --sidebar-color: darkgreen;
+    --sidebar-background-color: aliceblue;  
+    --sidebar-color-hover: black;
+    --sidebar-background-color-hover: white;  
+
+    --header-color: darkred;
+    --header-background-color: #ffdddd; 
+
+    --topbar-color: darkgreen;
+    --topbar-background-color: lightgrey;   
+    --topbar-color-hover: black;
+    --topbar-background-color-hover: lightgrey;
+}

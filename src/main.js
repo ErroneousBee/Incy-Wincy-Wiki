@@ -16,6 +16,8 @@ const App = {
         // First, we wait for the config, how else will we know what to do?
         await App.load_config();
 
+        App.load_theme();
+
         // Load the assorted navigation, banners and whatnot.
         App.load_side_content();
 
@@ -296,13 +298,13 @@ const App = {
                 // Toggle clicked, turn off all siblings
                 const isopen = li.lastElementChild.classList.contains("open");
                 li.closest("ul").querySelectorAll("li>ul.open").forEach(sibling => sibling.classList.remove("open"));
-               
+
                 if (!isopen) {
                     li.lastElementChild.classList.add("open");
                 }
 
             } else {
-                document.querySelectorAll("ul.open").forEach(sibling => sibling.classList.remove("open"));
+                document.querySelectorAll("nav#navigation_topbar ul.open").forEach(sibling => sibling.classList.remove("open"));
                 const path = App.get_path_from_element(li);
                 App.read_path_into_element(path, document.getElementById("content"));
             }
@@ -351,6 +353,15 @@ const App = {
 
         return App.get_path_from_element(elp, pathpart);
 
+    },
+
+    /**
+     * Set the theme href.
+     * @param {String} name 
+     */
+    load_theme() {
+        document.querySelector("link#theme_colors").setAttribute("href", "themes/" + Config.theme + "/colors.css");
+        document.querySelector("link#theme_layout").setAttribute("href", "themes/" + Config.theme + "/layout.css");
     }
 
 };
