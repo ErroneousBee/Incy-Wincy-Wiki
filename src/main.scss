@@ -188,10 +188,12 @@ body>main {
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     body {
 
+        font-size: larger;
+
         >main.grid {
 
             grid-template-columns: auto;
-            grid-template-rows: 5em auto;
+            grid-template-rows: 8em auto;
             grid-template-areas:
                 "header"
                 "content";
@@ -205,6 +207,10 @@ body>main {
             }
 
             >header {
+
+                margin: 0px;
+                padding-top: .5em;
+
        
                 div.title {
                     height: 5em;
@@ -214,16 +220,34 @@ body>main {
                         text-align: center;
                         padding: 5px 1em;
                         height: 100%;
+                        float: left;
 
                         >img{
-                            height: 2em;
+                            height: 4em;
                         }
                     }
+
+                    span.title {
+                        font-size: xxx-large;
+                        margin: 0px;
+                    }
+
+                    span.subtitle {
+                        font-size: x-large;
+                        margin: 0px 1em;
+                    }
+
+                }
+
+                div.toolbar {
+                    height: 2em;
+                    font-size: x-large;
                 }
             }
 
             >article {
                 padding: 0px 1em;
+                margin: 0px;
             }
         }
     }
@@ -269,12 +293,12 @@ body>main {
                 font-size: x-large;
                 margin: 0px 1em;
                 line-height: 2em;
-                vertical-align: middle;
-            }
+                vertical-align: baseline;            }
 
             span.subtitle {
                 font-size: small;
                 margin-right: 1em;
+                vertical-align: baseline;
             }
         }
 
