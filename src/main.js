@@ -144,7 +144,7 @@ const App = {
                         break;
 
                     case "md": {
-                        const [html,] = App.convert_markdown_page(text, file);
+                        const [html, ] = App.convert_markdown_page(text, file);
                         element.innerHTML = html;
                         break;
                     }
@@ -257,7 +257,8 @@ const App = {
      */
     load_side_content() {
 
-        App.read_file_into_element(Config.contentpath + Config.navigation_logo, document.getElementById("logo"));
+        document.querySelectorAll("div.logo, span.logo")
+            .forEach(el =>  App.read_file_into_element(Config.contentpath + Config.navigation_logo, el));
 
         document.querySelector("header span.title").innerHTML = Config.title;
 
