@@ -14,4 +14,7 @@
     --topbar-background-color: darkgreen;   
     --topbar-color-hover: white;
     --topbar-background-color-hover: red;
+
+    --article-color: black;
+    --article-background-color: aliceblue;
 }

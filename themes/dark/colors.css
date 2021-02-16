@@ -1,17 +1,20 @@
 :root {
-    --main-color: black;
-    --main-background-color: aliceblue;
+    --main-color: aliceblue;
+    --main-background-color: darkgrey;
 
     --sidebar-color: white;
-    --sidebar-background-color: black;  
+    --sidebar-background-color: #001111;  
     --sidebar-color-hover: black;
     --sidebar-background-color-hover: white;  
 
     --header-color: pink;
-    --header-background-color: black; 
+    --header-background-color: #330011; 
 
     --topbar-color: white;
     --topbar-background-color: darkgrey;   
     --topbar-color-hover: white;
     --topbar-background-color-hover: darkgreen;
+
+    --article-color: white;
+    --article-background-color: black;
 }
