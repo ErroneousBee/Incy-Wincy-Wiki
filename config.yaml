@@ -30,4 +30,4 @@ search: Search.html
 
 # This is the user config and other toos page, which is an html page behind the "hamburger" link
 # It hasnt been developed yet!
-config: Config.html
+settings: Settings.html

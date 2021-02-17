@@ -97,8 +97,6 @@ const App = {
             path = Config.home;
         }
 
-        console.log("From URL", url, path, !path, document.getElementById("content"));
-
         App.read_path_into_element(path, document.getElementById("content"));
 
     },
@@ -257,9 +255,11 @@ const App = {
      */
     load_side_content() {
 
+        // Mobile and Desktop logos
         document.querySelectorAll("div.logo, span.logo")
             .forEach(el =>  App.read_file_into_element(Config.contentpath + Config.navigation_logo, el));
 
+        // The config title
         document.querySelector("header span.title").innerHTML = Config.title;
 
         // Load and interfere with the side navbar
@@ -276,6 +276,7 @@ const App = {
                 }
             });
 
+        // The navigation in the header
         App.read_file_into_element(Config.contentpath + Config.navigation_topbar, document.getElementById("navigation_topbar"));
 
         // Click in the nav sidebar
@@ -288,6 +289,7 @@ const App = {
             App.read_path_into_element(path, document.getElementById("content"));
         };
 
+        // Click on the header navigation toolbar
         document.querySelector("nav#navigation_topbar").onclick = (e) => {
             e.preventDefault();
 
@@ -311,12 +313,23 @@ const App = {
             }
         };
 
+        // Click on the search and settings icons
+        document.querySelector("header span.settings").onclick = (e) => {
+            App.set_url(Config.settings);
+            App.load_content_from_url();
+        }
+        document.querySelector("header span.search").onclick = (e) => {
+            App.set_url(Config.search);
+            App.load_content_from_url();
+        }
+
+
     },
 
     /**
      * From the li element of a nav manu, go up the tree to the nav element, and get a path that is the page to load.
      * @param {Element} el 
-     * @param {string} acc 
+     * @param {string} acc - accumulator, null to begin with, then its a string.
      */
     get_path_from_element(el, acc) {
 
@@ -358,11 +371,12 @@ const App = {
 
     /**
      * Set the theme href.
-     * @param {String} name 
+     * @param {String} name - A String like "dark" or "light", or false/null for the config default.
      */
-    load_theme() {
-        document.querySelector("link#theme_colors").setAttribute("href", "themes/" + Config.theme + "/colors.css");
-        document.querySelector("link#theme_layout").setAttribute("href", "themes/" + Config.theme + "/layout.css");
+    load_theme(name) {
+        const theme = (name) ? name: Config.theme;
+        document.querySelector("link#theme_colors").setAttribute("href", "themes/" + theme + "/colors.css");
+        document.querySelector("link#theme_layout").setAttribute("href", "themes/" + theme + "/layout.css");
     }
 
 };
