@@ -211,10 +211,10 @@ body>main {
                 margin: 0px;
                 padding-top: .5em;
 
-       
+
                 div.title {
                     height: 5em;
-        
+
                     span.logo {
                         display: inline;
                         text-align: center;
@@ -222,7 +222,7 @@ body>main {
                         height: 100%;
                         float: left;
 
-                        >img{
+                        >img {
                             height: 4em;
                         }
                     }
@@ -293,7 +293,8 @@ body>main {
                 font-size: x-large;
                 margin: 0px 1em;
                 line-height: 2em;
-                vertical-align: baseline;            }
+                vertical-align: baseline;
+            }
 
             span.subtitle {
                 font-size: small;
@@ -327,5 +328,15 @@ body>main {
                 fill: white;
             }
         }
+    }
+}
+
+// Search page
+article div.searchform {
+    margin: 3em;
+
+    input {
+        margin-left: 1em;
+        width: 70%;
     }
 }
