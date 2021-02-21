@@ -2,6 +2,13 @@
 title: PortaWiki TODO List of Features.
 ---
 
+# Immediate Things
+
+* Search
+* Settings
+* Deploy onto S3
+
+
 # Features to be developed
 
 * Improve "Not Loaded" error page.
@@ -10,10 +17,8 @@ title: PortaWiki TODO List of Features.
 * Cache pages on load into a json structure
 * Highlight current sidebar location from URL
 * Search 
-    * Search Input/icon
-    * Search using a generated index
-    * Search using external tools
-    * Search by loading each file
+    * Search Page and javascript.
+    * Search using a generated index ( lunr.js )
     * Search button is a link to a page that handles all search.
     * Make search icon/input be a loaded HTML snippet
 * Build Tool
@@ -21,10 +26,14 @@ title: PortaWiki TODO List of Features.
     * Generate all content into index.html templates
     * Has crossover with Search and cache
 * Deploy Documentation and Tool
+* Woodland theme (to demo advanced setup)
+
+## Config
+* Replace config search/settings with path override config, then move Search and whatnot into a non-contents place. Also logo.
+* move navs into a place like content/assets/
 
 ## Sidebar and Top Navbar
 
-* Mobile CSS should load logo into header
 * Make sidebar have accordion abilities
 * What happens in sidebar when its a directory
     * Show sublist from sidebar?

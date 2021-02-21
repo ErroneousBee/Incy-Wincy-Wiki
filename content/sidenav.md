@@ -4,6 +4,7 @@ comment: No external links work here ( E.g. cannot navigate to http://example.co
 ---
 * Home
 * [TODO List](#TODO)
+* [Quick Start Guide](#Quick%20Start)
 * [Test Area](#testarea)
     * Group2
         * Group2a

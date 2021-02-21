@@ -1,5 +1,6 @@
 ---
 title: Welcome
+tags: home quickstart test
 ---
 
 This is Home.md, and is the default page. 
