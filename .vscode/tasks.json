@@ -16,7 +16,7 @@
         {
             "label": "Lunr Build",
             "type": "shell",
-            "command": "node src/build-index.js",
+            "command": "node src/build_lunr_index.js",
             "group": {
                 "kind": "build",
                 "isDefault": true

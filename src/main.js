@@ -257,7 +257,7 @@ const App = {
 
         // Mobile and Desktop logos
         document.querySelectorAll("div.logo, span.logo")
-            .forEach(el =>  App.read_file_into_element(Config.contentpath + Config.navigation_logo, el));
+            .forEach(el => App.read_file_into_element(Config.contentpath + Config.navigation_logo, el));
 
         // The config title
         document.querySelector("header span.title").innerHTML = Config.title;
@@ -374,7 +374,7 @@ const App = {
      * @param {String} name - A String like "dark" or "light", or false/null for the config default.
      */
     load_theme(name) {
-        const theme = (name) ? name: Config.theme;
+        const theme = (name) ? name : Config.theme;
         document.querySelector("link#theme_colors").setAttribute("href", "themes/" + theme + "/colors.css");
         document.querySelector("link#theme_layout").setAttribute("href", "themes/" + theme + "/layout.css");
     }

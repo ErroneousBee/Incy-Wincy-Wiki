@@ -8,9 +8,7 @@
         "ecmaVersion": 12
     },
     "globals": {
-            "jsyaml": "readonly",
-            "showdown": "readonly"
-        
+        "jsyaml": "readonly",
+        "showdown": "readonly"
     }
- 
 }
