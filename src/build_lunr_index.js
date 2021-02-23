@@ -1,4 +1,3 @@
-
 /**
  * Orininal code from https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites
  */
@@ -8,54 +7,58 @@ const path = require("path");
 const fs = require("fs");
 const lunr = require("lunr");
 const cheerio = require("cheerio");
-
+const js_yaml = require('js-yaml');
 
 // Change these constants to suit your needs
-const HTML_FOLDER = "content";  // folder with your HTML files
+const HTML_FOLDER = "content"; // folder with your HTML files
 // Valid search fields: "title", "description", "keywords", "body"
-const SEARCH_FIELDS = ["title", "description", "keywords", "body"];
+const SEARCH_FIELDS = ["title", "keywords", "body"];
 const EXCLUDE_FILES = ["search.html"];
-const MAX_PREVIEW_CHARS = 275;  // Number of characters to show for a given search result
-const OUTPUT_INDEX = "src/lunr_index.js";  // Index file
+//const SUFFIXES = ["md", "html", "txt"];
+//const SUFFIX_TYPES = ["markdown", "html", "text"];
+const MAX_PREVIEW_CHARS = 275; // Number of characters to show for a given search result
+const OUTPUT_INDEX = "src/lunr_index.js"; // Index file
 
-
-function isHtml(filename) {
-    const lower = filename.toLowerCase();
-    return (lower.endsWith(".md") || lower.endsWith(".html"));
-}
-
-
-function findHtml(folder) {
+/**
+ * Returns an array of file paths.
+ * @param {String} folder 
+ */
+function find_files(folder) {
     if (!fs.existsSync(folder)) {
         console.log("Could not find folder: ", folder);
-        return;
+        return [];
     }
 
-    var files = fs.readdirSync(folder);
-    var htmls = [];
-    for (var i = 0; i < files.length; i++) {
-        var filename = path.join(folder, files[i]);
-        var stat = fs.lstatSync(filename);
+    const files = fs.readdirSync(folder);
+    const sources = [];
+    for (const file of files) {
+        const filename = path.join(folder, file);
+
+        // Ignore listed files and paths
+        if (EXCLUDE_FILES.includes(file)) {
+            continue;
+        }
+        if (EXCLUDE_FILES.includes(filename)) {
+            continue;
+        }
+
+        const stat = fs.lstatSync(filename);
         if (stat.isDirectory()) {
-            var recursed = findHtml(filename);
-            for (var j = 0; j < recursed.length; j++) {
-                recursed[j] = path.join(files[i], recursed[j]).replace(/\\/g, "/");
-            }
-            htmls.push.apply(htmls, recursed);
+            sources.push(find_files(filename));
+        } else {
+            sources.push(filename);
         }
-        else if (isHtml(filename) && !EXCLUDE_FILES.includes(files[i])) {
-            htmls.push(files[i]);
-        }
+
     }
-    return htmls;
+
+    return sources.reduce((acc, val) => acc.concat(val), []);
 }
 
-function readHtml(root, file, fileId) {
-    var filename = path.join(root, file);
+function readHtml(filename, fileId) {
     var txt = fs.readFileSync(filename).toString();
     var $ = cheerio.load(txt);
     var title = $("title").text();
-    if (typeof title == 'undefined') title = file;
+    if (typeof title == 'undefined') title = filename;
     var description = $("meta[name=description]").attr("content");
     if (typeof description == 'undefined') description = "";
     var keywords = $("meta[name=keywords]").attr("content");
@@ -64,7 +67,35 @@ function readHtml(root, file, fileId) {
     if (typeof body == 'undefined') body = "";
     var data = {
         "id": fileId,
-        "link": file,
+        "link": filename,
+        "t": title,
+        "d": description,
+        "k": keywords,
+        "b": body
+    }
+    return data;
+}
+
+function readMarkdown(filename, fileId) {
+
+    const text = fs.readFileSync(filename).toString();
+
+    // First line is the seperator
+    const sep = text.split("\n", 1)[0].trim();
+    const [fm, body] = text.split("\n" + sep, 2);
+    let json = {};
+    try {
+        json = js_yaml.safeLoad(fm) || {};
+    } catch (e) {
+        console.error("Failure reading page frontmatter from ", filename, e);
+    }
+
+    var title = json.title || filename;
+    var description = json.description || title;
+    var keywords = json.keywords || json.tags || "";
+    var data = {
+        "id": fileId,
+        "link": filename,
         "t": title,
         "d": description,
         "k": keywords,
@@ -77,13 +108,13 @@ function readHtml(root, file, fileId) {
 function buildIndex(docs) {
     var idx = lunr(function () {
         this.ref('id');
-        for (var i = 0; i < SEARCH_FIELDS.length; i++) { 
+        for (var i = 0; i < SEARCH_FIELDS.length; i++) {
             this.field(SEARCH_FIELDS[i].slice(0, 1));
-        } 
+        }
         docs.forEach(function (doc) {
-                this.add(doc);
-            }, this);
-        });
+            this.add(doc);
+        }, this);
+    });
     return idx;
 }
 
@@ -107,23 +138,29 @@ function buildPreviews(docs) {
 
 
 function main() {
-    const files = findHtml(HTML_FOLDER);
+    const files = find_files(HTML_FOLDER);
     var docs = [];
     console.log("Building index for these files:");
     for (var i = 0; i < files.length; i++) {
         console.log("    " + files[i]);
-        docs.push(readHtml(HTML_FOLDER, files[i], i));
+        if (files[i].endsWith(".html")) {
+            docs.push(readHtml(files[i], i));
+        } else if (files[i].endsWith(".md")) {
+            docs.push(readMarkdown(files[i], i));
+        } else if (files[i].endsWith(".txt")) {
+            docs.push(readHtml(files[i], i));
+        }
     }
     var idx = buildIndex(docs);
     var previews = buildPreviews(docs);
-    var js = "const LUNR_DATA = " + JSON.stringify(idx) + ";\n" + 
-             "const PREVIEW_LOOKUP = " + JSON.stringify(previews) + ";";
-    fs.writeFile(OUTPUT_INDEX, js, function(err) {
-        if(err) {
+    var js = "const LUNR_DATA = " + JSON.stringify(idx) + ";\n" +
+        "const PREVIEW_LOOKUP = " + JSON.stringify(previews) + ";";
+    fs.writeFile(OUTPUT_INDEX, js, function (err) {
+        if (err) {
             return console.log(err);
         }
         console.log("Index saved as " + OUTPUT_INDEX);
-    }); 
+    });
 }
 
 main();
