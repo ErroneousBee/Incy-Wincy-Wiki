@@ -9,15 +9,14 @@ const lunr = require("lunr");
 const cheerio = require("cheerio");
 const js_yaml = require('js-yaml');
 
-// Change these constants to suit your needs
-const HTML_FOLDER = "content"; // folder with your HTML files
-// Valid search fields: "title", "description", "keywords", "body"
-const SEARCH_FIELDS = ["title", "keywords", "body"];
-const EXCLUDE_FILES = ["search.html"];
-//const SUFFIXES = ["md", "html", "txt"];
-//const SUFFIX_TYPES = ["markdown", "html", "text"];
-const MAX_PREVIEW_CHARS = 275; // Number of characters to show for a given search result
-const OUTPUT_INDEX = "src/lunr_index.js"; // Index file
+const Config = {
+    // Valid search fields: "title", "description", "keywords", "body"
+    search_fields: ["title", "description", "keywords", "body"],
+    search_exclude: ["search.html"],
+    search_max_preview_chars: 275,
+    search_lunr_index: "src/lunr_index.js",
+    contentpath: "content"
+};
 
 /**
  * Returns an array of file paths.
@@ -33,16 +32,20 @@ function find_files(folder) {
     const sources = [];
     for (const file of files) {
         const filename = path.join(folder, file);
-
-        // Ignore listed files and paths
-        if (EXCLUDE_FILES.includes(file)) {
-            continue;
-        }
-        if (EXCLUDE_FILES.includes(filename)) {
-            continue;
-        }
-
+        const filetype = filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
         const stat = fs.lstatSync(filename);
+
+        // Ignore listed files or paths, or unconfigured file types  
+        if (Config.search_exclude.includes(file)) {
+            continue;
+        }
+        if (Config.search_exclude.includes(filename)) {
+            continue;
+        }
+        if (stat.isFile() && !Config.extension_precedence.includes(filetype)) {
+            continue;
+        }
+
         if (stat.isDirectory()) {
             sources.push(find_files(filename));
         } else {
@@ -54,29 +57,27 @@ function find_files(folder) {
     return sources.reduce((acc, val) => acc.concat(val), []);
 }
 
-function readHtml(filename, fileId) {
-    var txt = fs.readFileSync(filename).toString();
-    var $ = cheerio.load(txt);
-    var title = $("title").text();
-    if (typeof title == 'undefined') title = filename;
-    var description = $("meta[name=description]").attr("content");
-    if (typeof description == 'undefined') description = "";
-    var keywords = $("meta[name=keywords]").attr("content");
-    if (typeof keywords == 'undefined') keywords = "";
-    var body = $("body").text()
-    if (typeof body == 'undefined') body = "";
-    var data = {
+function html_to_lunr_doc(filename, fileId) {
+    const txt = fs.readFileSync(filename).toString();
+
+    const linkpath = filename.slice(Config.contentpath.length);
+
+    const $ = cheerio.load(txt);
+    const title = $("title").text() || "";
+    const description = $("meta[name=description]").attr("content") || "";
+    const keywords = $("meta[name=keywords]").attr("content") || "";
+    const body = $("body").text() || "";
+    return {
         "id": fileId,
-        "link": filename,
+        "link": linkpath,
         "t": title,
         "d": description,
         "k": keywords,
         "b": body
     }
-    return data;
 }
 
-function readMarkdown(filename, fileId) {
+function markdown_to_lunr_doc(filename, fileId) {
 
     const text = fs.readFileSync(filename).toString();
 
@@ -90,26 +91,22 @@ function readMarkdown(filename, fileId) {
         console.error("Failure reading page frontmatter from ", filename, e);
     }
 
-    var title = json.title || filename;
-    var description = json.description || title;
-    var keywords = json.keywords || json.tags || "";
-    var data = {
+    return {
         "id": fileId,
-        "link": filename,
-        "t": title,
-        "d": description,
-        "k": keywords,
+        "link": filename.slice(Config.contentpath.length),
+        "t": json.title || "",
+        "d": json.description || "",
+        "k": json.keywords || json.tags || "",
         "b": body
     }
-    return data;
 }
 
 
 function buildIndex(docs) {
     var idx = lunr(function () {
         this.ref('id');
-        for (var i = 0; i < SEARCH_FIELDS.length; i++) {
-            this.field(SEARCH_FIELDS[i].slice(0, 1));
+        for (var i = 0; i < Config.search_fields.length; i++) {
+            this.field(Config.search_fields[i].slice(0, 1));
         }
         docs.forEach(function (doc) {
             this.add(doc);
@@ -118,6 +115,21 @@ function buildIndex(docs) {
     return idx;
 }
 
+function read_config() {
+
+    const text = fs.readFileSync("config.yaml").toString();
+
+    try {
+        const json = js_yaml.safeLoad(text);
+        for (const item in json) {
+            Config[item] = json[item];
+        }
+    } catch (e) {
+        console.error("Failure getting configuration from config.yaml", e);
+        return;
+    }
+
+}
 
 function buildPreviews(docs) {
     var result = {};
@@ -125,8 +137,8 @@ function buildPreviews(docs) {
         var doc = docs[i];
         var preview = doc["d"];
         if (preview == "") preview = doc["b"];
-        if (preview.length > MAX_PREVIEW_CHARS)
-            preview = preview.slice(0, MAX_PREVIEW_CHARS) + " ...";
+        if (preview.length > Config.search_max_preview_chars)
+            preview = preview.slice(0, Config.search_max_preview_chars) + " ...";
         result[doc["id"]] = {
             "t": doc["t"],
             "p": preview,
@@ -138,28 +150,36 @@ function buildPreviews(docs) {
 
 
 function main() {
-    const files = find_files(HTML_FOLDER);
+
+    read_config();
+
+    // Get all the content files and convert them to lunr doc objects
+    const files = find_files(Config.contentpath);
     var docs = [];
     console.log("Building index for these files:");
     for (var i = 0; i < files.length; i++) {
         console.log("    " + files[i]);
         if (files[i].endsWith(".html")) {
-            docs.push(readHtml(files[i], i));
+            docs.push(html_to_lunr_doc(files[i], i));
         } else if (files[i].endsWith(".md")) {
-            docs.push(readMarkdown(files[i], i));
+            docs.push(markdown_to_lunr_doc(files[i], i));
         } else if (files[i].endsWith(".txt")) {
-            docs.push(readHtml(files[i], i));
+            docs.push(html_to_lunr_doc(files[i], i));
         }
     }
+
+    // Use lunr to create the index, and a map of files:preview_texts.
     var idx = buildIndex(docs);
     var previews = buildPreviews(docs);
+
+
     var js = "const LUNR_DATA = " + JSON.stringify(idx) + ";\n" +
-        "const PREVIEW_LOOKUP = " + JSON.stringify(previews) + ";";
-    fs.writeFile(OUTPUT_INDEX, js, function (err) {
+        "const LUNR_PREVIEW_LOOKUP = " + JSON.stringify(previews) + ";";
+    fs.writeFile(Config.search_lunr_index, js, function (err) {
         if (err) {
             return console.log(err);
         }
-        console.log("Index saved as " + OUTPUT_INDEX);
+        console.log("Index saved as " + Config.search_lunr_index);
     });
 }
 

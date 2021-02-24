@@ -23,6 +23,7 @@ navigation_topbar: headernav.md
 # Developer stuff
 show_config: true
 extension_precedence: ["md", "html", "htm", "txt"]
+extension_types: ["markdown", "html", "html", "text"]
 
 # This is the search tool, which is an html page behind the "search" link
 # It hasnt been developed yet!
@@ -31,3 +32,9 @@ search: Search.html
 # This is the user config and other toos page, which is an html page behind the "hamburger" link
 # It hasnt been developed yet!
 settings: Settings.html
+
+# Search index items
+search_fields: ["title", "description", "keywords", "body"]
+search_exclude: ["/assets", "search.html"]
+search+max_preview_chars: 275
+search_index: "src/lunr_index.js"
