@@ -6,6 +6,11 @@ const Search = {
         const value = e.target.value;
         const results = Search.index.search(value);
 
+        if (value === "" || results.length === 0) {
+            document.querySelector("div.searchresults").innerHTML = '<hr/>';
+            return;
+        }
+
         let html = '<ul>';
         for (const result of results.slice(0, 10)) {
 
