@@ -188,7 +188,7 @@ body>main {
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     body {
 
-        font-size: larger;
+        font-size: large;
 
         >main.grid {
 
@@ -213,8 +213,9 @@ body>main {
 
 
                 div.title {
-                    height: 5em;
-
+                    height: 6em;
+                    vertical-align: top;
+                    
                     span.logo {
                         display: inline;
                         text-align: center;
@@ -228,26 +229,29 @@ body>main {
                     }
 
                     span.title {
-                        font-size: xxx-large;
+                        font-size: 2em;
                         margin: 0px;
+                        line-height: unset;
                     }
 
                     span.subtitle {
-                        font-size: x-large;
+                        font-size: 1.5em;
                         margin: 0px 1em;
+                        line-height: unset;
                     }
 
                 }
 
                 div.toolbar {
                     height: 2em;
-                    font-size: x-large;
+                    font-size: 1.5em;
                 }
             }
 
             >article {
                 padding: 0px 1em;
                 margin: 0px;
+                font-size: 1.5em;
             }
         }
     }
