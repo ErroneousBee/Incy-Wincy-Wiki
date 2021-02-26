@@ -332,11 +332,49 @@ body>main {
 }
 
 // Search page
-article div.searchform {
-    margin: 3em;
+article {
+    div.searchform {
+        margin: 3em;
 
-    input {
-        margin-left: 1em;
-        width: 70%;
+        input {
+            margin-left: 1em;
+            width: 70%;
+        }
     }
+
+    div.searchresults {
+        margin: 3em;
+
+        ul {
+            list-style: none;
+
+            li {
+
+                margin-top: 1em;
+
+                a {
+                    text-decoration: none;
+                }
+
+                span.title {
+                    color: var(--search-title-color);
+                }
+
+                span.link {
+                    color: var(--search-link-color);
+                    margin-left: 2em;
+                    font-size: small;
+                    text-decoration: underline;
+
+                }
+
+                span.preview {
+                    font-size: small;
+                    color: var(--search-preview-color);
+                }
+
+            }
+        }
+    }
+
 }

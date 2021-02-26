@@ -63,7 +63,7 @@ function html_to_lunr_doc(filename, fileId) {
     const linkpath = filename.slice(Config.contentpath.length);
 
     const $ = cheerio.load(txt);
-    const title = $("title").text() || "";
+    const title = $("title").text() || $("h1").text() || $("h1").text().split(" ").slice(5).join(" ");
     const description = $("meta[name=description]").attr("content") || "";
     const keywords = $("meta[name=keywords]").attr("content") || "";
     const body = $("body").text() || "";

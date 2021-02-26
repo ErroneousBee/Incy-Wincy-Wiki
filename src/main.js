@@ -133,8 +133,6 @@ const App = {
             })
             .then(text => {
 
-                console.log("Loaded", file, "type:", filetype, text);
-
                 switch (filetype) {
                     case "htm":
                     case "html":
@@ -177,8 +175,6 @@ const App = {
             path = path.substring(0, path.lastIndexOf("."));
         }
 
-        console.trace("Loading", path, extn_list);
-
         // Clear the subtitle
         document.querySelector("header span.subtitle").innerHTML = "";
 
@@ -189,22 +185,23 @@ const App = {
                 if (!response.ok) {
                     throw new Error(response.statusText)
                 }
-                console.log("Loaded", response);
 
                 const filename = response.url.split('/').pop();
                 const filetype = filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
 
                 response.text().then(text => {
 
+                    const event = new CustomEvent('pathloaded', { path: path });
+
                     switch (filetype) {
                         case "htm":
                         case "html":
                             element.innerHTML = text;
+                            document.dispatchEvent(event);
                             break;
 
                         case "md": {
                             const [html, json] = App.convert_markdown_page(text, response.url);
-                            console.log("markdown resp ==", html, json);
                             // Deal with json frontmatter
                             if (json.title) {
                                 document.querySelector("header span.subtitle").innerHTML = json.title;
