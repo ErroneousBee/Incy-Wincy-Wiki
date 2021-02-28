@@ -376,4 +376,5 @@ const App = {
         document.querySelector("link#theme_layout").setAttribute("href", "themes/" + theme + "/layout.css");
     }
 
+
 };

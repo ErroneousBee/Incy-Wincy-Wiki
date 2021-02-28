@@ -7,9 +7,11 @@
     <script src="src/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.14.1/js-yaml.min.js"></script>
-    
+
     <!-- Search Tools -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"
+        integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg=="
+        crossorigin="anonymous"></script>
     <script src="src/lunr_index.js"></script>
     <script src="src/lunr_search.js"></script>
 
@@ -34,27 +36,32 @@
         </symbol>
     </svg>
 
-    <main class="grid">
-        <div class="logo" id="logo"></div>
-        <nav class="sidenav" id="navigation_sidebar"></nav>
-        <header>
-            <div class="title"><span class="logo"></span><span class="title"></span><span class="subtitle"></span></div>
-            <div class="toolbar">
-                <nav class="topmenu" id="navigation_topbar"></nav>
-                <span class="icon settings">
-                    <svg class="svg-icon">
-                        <use xlink:href="#icon-menu" />
-                    </svg>
-                </span>
-                <span class="icon search">
-                    <svg class="svg-icon">
-                        <use xlink:href="#icon-search" />
-                    </svg>
-                </span>
-            </div>
-        </header>
-        <article class="content" id="content"></article>
-    </main>
+    <div class=container>
+        <div class="sidebar">
+            <div class="logo" id="logo"></div>
+            <nav class="sidenav" id="navigation_sidebar"></nav>
+        </div>
+        <main>
+            <header>
+                <div class="title"><span class="logo"></span><span class="title"></span><span class="subtitle"></span>
+                </div>
+                <div class="toolbar">
+                    <nav class="topmenu" id="navigation_topbar"></nav>
+                    <span class="icon settings">
+                        <svg class="svg-icon">
+                            <use xlink:href="#icon-menu" />
+                        </svg>
+                    </span>
+                    <span class="icon search">
+                        <svg class="svg-icon">
+                            <use xlink:href="#icon-search" />
+                        </svg>
+                    </span>
+                </div>
+            </header>
+            <article class="content" id="content"></article>
+        </main>
+    </div>
 </body>
 
 </html>
