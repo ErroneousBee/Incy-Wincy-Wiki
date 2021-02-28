@@ -88,58 +88,45 @@ body div.container {
     article {
         overflow-y: auto;
         height: 100%;
+        width: 100%;
     }
 
     header {
-        border-radius: 25px;
-        position: relative;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
         margin-right: 5px;
-        height: 5em;
 
         div.title {
             width: 100%;
-            height: 1.5em;
         }
 
         div.toolbar {
-            height: 2em;
-            position: absolute;
-            bottom: 0;
             width: 100%;
 
             nav.topmenu {
                 display: inline-block;
-                bottom: 0;
-                position: absolute;
             }
 
             .icon {
                 float: right;
-                margin: 0.5em;
+                margin: 0px 0.5em;
                 cursor: pointer;
             }
 
             nav#navigation_topbar {
                 height: 100%;
-                padding-bottom: 2px;
 
-                ul>li:hover>ul {
-                    display: flex;
-                    list-style: none;
-                    margin-left: -1em;
-                }
-
+                ul>li:hover>ul,
                 ul>li>ul.open {
                     display: flex;
                     list-style: none;
-                    margin-left: -1em;
+                    margin-left: 1em;
+                    flex-direction: column;
                 }
 
                 ul {
                     padding: 0px;
                     margin: 0px;
-                    margin-top: 2px;
-                    height: 100%;
                     list-style: none;
                     display: flex;
                     flex-wrap: nowrap;
@@ -148,7 +135,7 @@ body div.container {
                     >li {
                         text-align: center;
                         flex: 1 1 auto;
-                        padding: 5px 1em;
+                        padding: 0px 0.5em;
                         height: 100%;
 
                         ul {
