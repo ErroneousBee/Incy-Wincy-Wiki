@@ -17,4 +17,8 @@
 
     --article-color: white;
     --article-background-color: black;
+
+    --search-title-color: white;
+    --search-link-color: lightblue;
+    --search-preview-color: grey;
 }
