@@ -162,7 +162,7 @@ const App = {
 
     /**
      * Read content path into the content element, update any navbars along the way.
-     * @param {*} file - fie name including extension and directory levels
+     * @param {*} path - fie name including extension and directory levels
      * @param {*} element - DOM element to put the content into
      */
     read_path_into_element(path, element) {
