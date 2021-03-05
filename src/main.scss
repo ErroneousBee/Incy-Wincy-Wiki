@@ -21,6 +21,7 @@ body>svg {
 body {
     height: 100%;
     overflow: hidden;
+    margin: 0;
 
     >div.container {
         width: 100%;
@@ -32,6 +33,18 @@ body {
 
         >main {
             flex: 1 1 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            header {
+                flex: 1 1 auto;
+            }
+
+            article {
+                flex: 1 1 100%;
+            }
+
         }
     }
 }
@@ -41,117 +54,115 @@ body div.container {
     height: 100%;
     font-family: sans-serif;
 
-    .logo {
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        margin-right: 5px;
-        margin-left: 5px;
-        text-align: center;
+    div.sidebar {
 
-        img {
-            height: 5em;
-        }
-    }
-
-    nav.sidenav {
         height: 100%;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-        margin-right: 5px;
-        margin-left: 5px;
-        padding-right: 1em;
-        overflow-y: auto;
+        border-radius: 25px;
 
-        ul {
-            padding-left: 1em;
-            list-style: none;
+        .logo {
+            text-align: center;
 
-            li {
-                margin: 0;
-                cursor: pointer;
-                white-space: nowrap;
+            img {
+                height: 5em;
+            }
+        }
 
-                span.navline {
-                    display: block;
-                    padding: 0em 3px;
-                }
+        nav.sidenav {
+            height: 100%;
+            padding-right: 1em;
+            overflow-y: auto;
 
-                a {
+            ul {
+                padding-left: 1em;
+                list-style: none;
+
+                li {
+                    margin: 0;
                     cursor: pointer;
-                    text-decoration: none;
-                    color: unset;
-                }
-            }
-        }
-    }
+                    white-space: nowrap;
 
-    article {
-        overflow-y: auto;
-        height: 100%;
-        width: 100%;
-    }
-
-    header {
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        margin-right: 5px;
-
-        div.title {
-            width: 100%;
-        }
-
-        div.toolbar {
-            width: 100%;
-
-            nav.topmenu {
-                display: inline-block;
-            }
-
-            .icon {
-                float: right;
-                margin: 0px 0.5em;
-                cursor: pointer;
-            }
-
-            nav#navigation_topbar {
-                height: 100%;
-
-                ul>li:hover>ul,
-                ul>li>ul.open {
-                    display: flex;
-                    list-style: none;
-                    margin-left: 1em;
-                    flex-direction: column;
-                }
-
-                ul {
-                    padding: 0px;
-                    margin: 0px;
-                    list-style: none;
-                    display: flex;
-                    flex-wrap: nowrap;
-                    flex-direction: row;
-
-                    >li {
-                        text-align: center;
-                        flex: 1 1 auto;
-                        padding: 0px 0.5em;
-                        height: 100%;
-
-                        ul {
-                            display: none;
-                            position: absolute;
-                        }
-
-                        a {
-                            text-decoration: none;
-                            color: unset;
-                        }
+                    span.navline {
+                        display: block;
+                        padding: 0em 3px;
                     }
 
-
+                    a {
+                        cursor: pointer;
+                        text-decoration: none;
+                        color: unset;
+                    }
                 }
             }
+        }
+    }
+
+    main {
+        header {
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+
+            div.title {
+                width: 100%;
+            }
+
+            div.toolbar {
+                width: 100%;
+
+                nav.topmenu {
+                    display: inline-block;
+                }
+
+                .icon {
+                    float: right;
+                    margin: 0px 0.5em;
+                    cursor: pointer;
+                }
+
+                nav#navigation_topbar {
+                    height: 100%;
+
+                    ul>li:hover>ul,
+                    ul>li>ul.open {
+                        display: flex;
+                        list-style: none;
+                        margin-left: 1em;
+                        flex-direction: column;
+                    }
+
+                    ul {
+                        padding: 0px;
+                        margin: 0px;
+                        list-style: none;
+                        display: flex;
+                        flex-wrap: nowrap;
+                        flex-direction: row;
+
+                        >li {
+                            text-align: center;
+                            flex: 1 1 auto;
+                            padding: 0px 0.5em;
+                            height: 100%;
+
+                            ul {
+                                display: none;
+                                position: absolute;
+                            }
+
+                            a {
+                                text-decoration: none;
+                                color: unset;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        article {
+            overflow-y: auto;
+            height: 100%;
+            width: 100%;
+            padding: 3px 1em;
         }
     }
 }
@@ -161,73 +172,76 @@ body>div.container {
     color: var(--main-color);
     background-color: var(--main-background-color);
 
-    .sidebar>.logo {
-        background-color: var(--sidebar-background-color);
-    }
+    div.sidebar {
 
-    .sidebar>nav {
         color: var(--sidebar-color);
         background-color: var(--sidebar-background-color);
 
-        li>span.navline:hover {
-            color: var(--sidebar-color-hover);
-            background-color: var(--sidebar-background-color-hover);
+        >nav {
+            li>span.navline:hover {
+                color: var(--sidebar-color-hover);
+                background-color: var(--sidebar-background-color-hover);
+            }
         }
     }
 
-    article {
-        color: var(--article-color);
-        background-color: var(--article-background-color);
-    }
+    main {
 
-    header {
-        color: var(--header-color);
-        background-color: var(--header-background-color);
 
-        div.title {
-
-            span.logo {
-                display: none;
-            }
-
-            span.title {
-                text-indent: 5%;
-                font-size: x-large;
-                margin: 0px 1em;
-                line-height: 2em;
-                vertical-align: baseline;
-            }
-
-            span.subtitle {
-                font-size: small;
-                margin-right: 1em;
-                vertical-align: baseline;
-            }
+        article {
+            color: var(--article-color);
+            background-color: var(--article-background-color);
         }
 
-        div.toolbar {
-            color: var(--topbar-color);
-            background-color: var(--topbar-background-color);
+        header {
+            color: var(--header-color);
+            background-color: var(--header-background-color);
 
-            >nav {
-                ul {
-                    color: var(--topbar-color);
-                    background-color: var(--topbar-background-color);
+            div.title {
 
-                    >li:hover {
-                        cursor: pointer;
-                        color: var(--topbar-color-hover);
-                        background-color: var(--topbar-background-color-hover);
-                    }
+                span.logo {
+                    display: none;
+                }
+
+                span.title {
+                    text-indent: 5%;
+                    font-size: x-large;
+                    margin: 0px 1em;
+                    line-height: 2em;
+                    vertical-align: baseline;
+                }
+
+                span.subtitle {
+                    font-size: small;
+                    margin-right: 1em;
+                    vertical-align: baseline;
                 }
             }
 
-            .icon {
-                fill: black;
-            }
+            div.toolbar {
+                color: var(--topbar-color);
+                background-color: var(--topbar-background-color);
 
-            .icon:hover {
-                fill: white;
+                >nav {
+                    ul {
+                        color: var(--topbar-color);
+                        background-color: var(--topbar-background-color);
+
+                        >li:hover {
+                            cursor: pointer;
+                            color: var(--topbar-color-hover);
+                            background-color: var(--topbar-background-color-hover);
+                        }
+                    }
+                }
+
+                .icon {
+                    fill: black;
+                }
+
+                .icon:hover {
+                    fill: white;
+                }
             }
         }
     }
