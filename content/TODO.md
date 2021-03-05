@@ -1,10 +1,12 @@
 ---
 title: PortaWiki TODO List of Features.
+keywords: todo development
 ---
 
 # Immediate Things
 
-* Settings
+* Hide hamburger for desktop, have it show sidenav for  mobile
+* Accordion sidebar menu
 * Woodlands theme
 
 # Features to be developed
@@ -12,7 +14,6 @@ title: PortaWiki TODO List of Features.
 * Fix explicit filetypes in link going missing.
 * Improve "Not Loaded" error page.
 * Make Yaml errors visible, or at least less obscure in the console.
-* Make navbar width be correct, use flex? http://jsfiddle.net/avbj64u0/19/
 * Cache pages on load into a json structure
 * Highlight current sidebar location from URL
 * Search 
@@ -31,4 +32,5 @@ title: PortaWiki TODO List of Features.
     * Show error? (prefer this)
 * CSS dropdown menus
     * Topbar could cascade better
+    * Topbar should work best as single dropdowns
 
