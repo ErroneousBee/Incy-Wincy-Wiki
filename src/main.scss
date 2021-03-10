@@ -191,6 +191,20 @@ body>div.container {
         article {
             color: var(--article-color);
             background-color: var(--article-background-color);
+
+            a {
+                color: var(--article-link-color);
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            h1, h2, h3, h4{
+                color: var(--article-header-color);
+            }
         }
 
         header {
