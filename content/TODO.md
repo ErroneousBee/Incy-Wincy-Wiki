@@ -12,6 +12,7 @@ keywords: todo development
 # Features to be developed
 
 * Fix explicit filetypes in link going missing.
+* Have theme overridable in the frontmatter
 * Improve "Not Loaded" error page.
 * Make Yaml errors visible, or at least less obscure in the console.
 * Cache pages on load into a json structure
