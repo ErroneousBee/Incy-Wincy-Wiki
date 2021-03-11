@@ -167,6 +167,23 @@ body div.container {
     }
 }
 
+// Side Navbar Accordio n
+nav.sidenav {
+
+    >ul {
+        display: block;
+
+        ul {
+            display: none;
+        }
+
+        li.open>ul {
+            display: block;
+        }
+    }
+}
+
+
 // Colours and font sizes
 body>div.container {
     color: var(--main-color);
@@ -202,7 +219,10 @@ body>div.container {
                 text-decoration: underline;
             }
 
-            h1, h2, h3, h4{
+            h1,
+            h2,
+            h3,
+            h4 {
                 color: var(--article-header-color);
             }
         }

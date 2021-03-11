@@ -191,7 +191,9 @@ const App = {
 
                 response.text().then(text => {
 
-                    const event = new CustomEvent('pathloaded', { path: path });
+                    const event = new CustomEvent('pathloaded', {
+                        path: path
+                    });
 
                     switch (filetype) {
                         case "htm":
@@ -277,14 +279,7 @@ const App = {
         App.read_file_into_element(Config.contentpath + Config.navigation_topbar, document.getElementById("navigation_topbar"));
 
         // Click in the nav sidebar
-        document.querySelector("nav#navigation_sidebar").onclick = (e) => {
-            e.preventDefault();
-
-            // If its got li children, fix open accordian
-
-            const path = App.get_path_from_element(e.target);
-            App.read_path_into_element(path, document.getElementById("content"));
-        };
+        document.querySelector("nav#navigation_sidebar").onclick = App.nav_sidebar_click_handler;
 
         // Click on the header navigation toolbar
         document.querySelector("nav#navigation_topbar").onclick = (e) => {
@@ -320,6 +315,32 @@ const App = {
             App.load_content_from_url();
         }
 
+
+    },
+
+    /**
+     * User has clicked in the side navbar menu, squeeze the bellows or navigate accordionly.
+     * @param {*} event 
+     */
+    nav_sidebar_click_handler(event) {
+
+
+        event.preventDefault();
+
+        const target_li = event.target.closest("li");
+        const has_children = [...target_li.children].filter(el => el.tagName === "UL").length > 0;
+
+        console.log("click nav", target_li, has_children);
+
+        // If its got li children, fix open accordiant
+        if (has_children) {
+            target_li.classList.toggle("open");
+            return;
+        }
+
+
+        const path = App.get_path_from_element(event.target);
+        App.read_path_into_element(path, document.getElementById("content"));
 
     },
 
