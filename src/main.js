@@ -240,7 +240,14 @@ const App = {
         const [fm, md] = text.split("\n" + sep, 2);
         try {
             const json = jsyaml.safeLoad(fm);
-            const converter = new showdown.Converter();
+            const converter = new showdown.Converter({
+                noHeaderId: true,
+                customizedHeaderId: true,
+                parseImgDimensions: true,
+                tables: true,
+                tasklists: true
+
+            });
             return [converter.makeHtml(md), json];
         } catch (e) {
             console.error("Failure reading page frontmatter from ", source, e);
@@ -337,7 +344,6 @@ const App = {
             target_li.classList.toggle("open");
             return;
         }
-
 
         const path = App.get_path_from_element(event.target);
         App.read_path_into_element(path, document.getElementById("content"));
