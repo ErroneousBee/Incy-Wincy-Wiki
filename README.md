@@ -26,4 +26,13 @@ It can also be used inside another repository for hosting developer notes.
 
 * TODO: Find services that allow fetch
 
+## Hosting your content in a git repo
+
+You can host your own content, and subtree it into the wiki
+
+```bash
+git remote add ACGWebSite git@github.com:ErroneousBee/ACGWebSite.git
+git subtree add --prefix=ACGWebSite/ ACGWebSite main --squash
+```
+
 
