@@ -13,7 +13,7 @@ comment: No external links work here ( E.g. cannot navigate to http://example.co
     * [The Woods](#the-woods)
     * [History](#history)
     * [Geology](#geology)
-    * [Flora and Fauna](#flora-and-flora)
+    * [Flora and Fauna](#flora-and-fauna)
     * [Nature Trail](#nature-trail)
     * [Species](#species-lists)
     * [BushCam](#bushcam)

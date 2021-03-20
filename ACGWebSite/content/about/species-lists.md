@@ -1,380 +1,375 @@
 ---
-id: 279
-title: 'About The Woods &#8211; Species Lists'
-date: 2018-06-10T21:27:45+00:00
-author: w8egob
-layout: page
-guid: https://ashplats.org/?page_id=279
+
+title: About The Woods - Species Lists
 ---
 ## In the Meadow
 
-<div>
-  <table class="alignleft" style="height: 888px; border-style: none; border-color: #000000;" border="1">
-    <tr style="height: 24px;">
-      <th style="height: 24px; border-style: solid;">
+  <table  style="border-style: none;">
+    <tr>
+      <th>
         Binomial Name
       </th>
       
-      <th style="height: 24px;">
+      <th>
         Common Name
       </th>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         Lolium
       </td>
       
-      <td style="height: 24px;">
+      <td>
         Rye Grass
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         Poa Trivialis
       </td>
       
-      <td style="height: 24px;">
+      <td>
         Rough Stalked Meadow Grass
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         Holcus Lanatus
       </td>
       
-      <td style="height: 24px;">
+      <td>
         yorkshire fog
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         Rumex Acetosa
       </td>
       
-      <td style="height: 24px;">
+      <td>
         common sorrel
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         Rumex Obtus fozia
       </td>
       
-      <td style="height: 24px;">
+      <td>
         broad leaved dock
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         Dactylis Glomerata
       </td>
       
-      <td style="height: 24px;">
+      <td>
         Cock’s foot grass
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         ranunculus repens
       </td>
       
-      <td style="height: 24px;">
+      <td>
         creeping buttercup
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         chorthippus parallelus
       </td>
       
-      <td style="height: 24px;">
+      <td>
         meadow grasshopper
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         yellow rattle
       </td>
       
-      <td style="height: 24px;">
+      <td>
         yellow rattle
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         centaurea nigra
       </td>
       
-      <td style="height: 24px;">
+      <td>
         common knapweed
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         stellaria graminea
       </td>
       
-      <td style="height: 24px;">
+      <td>
         lesser stitchwort
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         arrhenatherum elatius
       </td>
       
-      <td style="height: 24px;">
+      <td>
         false oat grass
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
       </td>
       
-      <td style="height: 24px;">
+      <td>
         bluebell
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
       </td>
       
-      <td style="height: 24px;">
+      <td>
         bracken
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         prunella vulgaris
       </td>
       
-      <td style="height: 24px;">
+      <td>
         self heal
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
       </td>
       
-      <td style="height: 24px;">
+      <td>
         common spotted orchid
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
       </td>
       
-      <td style="height: 24px;">
+      <td>
         common blue butterfly
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         trifolium pratense
       </td>
       
-      <td style="height: 24px;">
+      <td>
         red clover
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         plantago lanceolata
       </td>
       
-      <td style="height: 24px;">
+      <td>
         ribwort plantain
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         cirsium palustre
       </td>
       
-      <td style="height: 24px;">
+      <td>
         marsh thistle
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         hypochaeris
       </td>
       
-      <td style="height: 24px;">
+      <td>
         cat’s ears
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
       </td>
       
-      <td style="height: 24px;">
+      <td>
         wild angelica
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         leucanthemum
       </td>
       
-      <td style="height: 24px;">
+      <td>
         oxeye daisy
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         senecio jacobaea
       </td>
       
-      <td style="height: 24px;">
+      <td>
         ragwort
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         agrostis capillaris
       </td>
       
-      <td style="height: 24px;">
+      <td>
         common bent
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         trifolium repens
       </td>
       
-      <td style="height: 24px;">
+      <td>
         white clover
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         ranunculus acris
       </td>
       
-      <td style="height: 24px;">
+      <td>
         meadow buttercup
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         anthoxanthum odoratum
       </td>
       
-      <td style="height: 24px;">
+      <td>
         sweet vernal grass
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         cynosurus cristantus
       </td>
       
-      <td style="height: 24px;">
+      <td>
         creste dogstail
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         lotus corniculatus
       </td>
       
-      <td style="height: 24px;">
+      <td>
         birds foot trefoil
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         lotus uliginosus
       </td>
       
-      <td style="height: 24px;">
+      <td>
         marsh birds foot trefoil
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         luzula campestris
       </td>
       
-      <td style="height: 24px;">
+      <td>
         field wood rush
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         cerastium
       </td>
       
-      <td style="height: 24px;">
+      <td>
         Mouse-ear chickweed
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         lasius flavus
       </td>
       
-      <td style="height: 24px;">
+      <td>
         yellow meadow ant
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         festuca rubra
       </td>
       
-      <td style="height: 24px;">
+      <td>
         red fescue
       </td>
     </tr>
     
-    <tr style="height: 24px;">
-      <td style="height: 24px;">
+    <tr>
+      <td>
         potentilla erecta
       </td>
       
-      <td style="height: 24px;">
+      <td>
         tormentil
       </td>
     </tr>
   </table>
-</div>
+
 
 ##

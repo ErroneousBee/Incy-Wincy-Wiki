@@ -11,7 +11,7 @@
     * [The Woods](#the-woods)
     * [History](#history)
     * [Geology](#geology)
-    * [Flora and Fauna](#flora-and-flora)
+    * [Flora and Fauna](#flora-and-fauna)
     * [Nature Trail](#nature-trail)
     * [Species](#species-lists)
     * [BushCam](#bushcam)
