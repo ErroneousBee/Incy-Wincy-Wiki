@@ -35,4 +35,10 @@ git remote add ACGWebSite git@github.com:ErroneousBee/ACGWebSite.git
 git subtree add --prefix=ACGWebSite/ ACGWebSite main --squash
 ```
 
+To push content to the correct place: 
+
+```bash
+git subtree push --prefix=ACGWebSite ACGWebSite main
+```
+
 
