@@ -1,16 +1,17 @@
 ---
-id: 246
 title: 'Tasks &#8211; Rhododendron Control'
-date: 2018-01-27T13:29:49+00:00
-author: w8egob
-layout: page
-guid: https://ashplats.org/?page_id=246
 ---
-<figure id="attachment_247" class="thumbnail wp-caption aligncenter" style="width: 310px">[<img class="wp-image-247 size-medium" src="https://ashplats.org/wp-content/uploads/2018/01/P1150702-300x225.jpg" alt="" width="300" height="225" srcset="https://ashplats.org/wp-content/uploads/2018/01/P1150702-300x225.jpg 300w, https://ashplats.org/wp-content/uploads/2018/01/P1150702-768x576.jpg 768w, https://ashplats.org/wp-content/uploads/2018/01/P1150702-1024x768.jpg 1024w, https://ashplats.org/wp-content/uploads/2018/01/P1150702-640x480.jpg 640w, https://ashplats.org/wp-content/uploads/2018/01/P1150702.jpg 1920w" sizes="(max-width: 300px) 100vw, 300px" />](https://ashplats.org/wp-content/uploads/2018/01/P1150702.jpg)<figcaption class="caption wp-caption-text">Rhododendron Ponticum</figcaption></figure> 
+
+# Controlling Invasive Species
 
 _Rhododendron Ponticum_ was introduced into Britain by the Victorians for its ornamental value.
 
 Unfortunately they didn’t realise that it would ‘escape’ from our gardens and start to colonise our woodlands.
+
+ <figure>
+  <img src="ACGWebSite/images/P1150702.jpg" alt="Rhododendron Ponticum" style="width:40%"/>
+  <figcaption>Rhododendron Ponticum</figcaption>
+</figure>
 
 The dense leaves of _Rhododendron Ponticum_ eliminate more or less all light from the ground below, and nothing can grow there. As it spreads across the woodland, more and more of the woodland flowers and animals are pushed out.
 

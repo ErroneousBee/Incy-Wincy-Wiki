@@ -1,23 +1,36 @@
 ---
-title: About The Woods &#8211; Flora and Fauna
+title: About The Woods - Flora and Fauna
 ---
-<figure id="attachment_158" class="thumbnail wp-caption alignnone" style="width: 707px">[<img class="wp-image-158 size-large" src="https://ashplats.org/wp-content/uploads/2018/01/Winter-trees-in-Ashplats-1024x768.jpg" alt="" width="697" height="523" srcset="https://ashplats.org/wp-content/uploads/2018/01/Winter-trees-in-Ashplats-1024x768.jpg 1024w, https://ashplats.org/wp-content/uploads/2018/01/Winter-trees-in-Ashplats-300x225.jpg 300w, https://ashplats.org/wp-content/uploads/2018/01/Winter-trees-in-Ashplats-768x576.jpg 768w, https://ashplats.org/wp-content/uploads/2018/01/Winter-trees-in-Ashplats-640x480.jpg 640w, https://ashplats.org/wp-content/uploads/2018/01/Winter-trees-in-Ashplats.jpg 1920w" sizes="(max-width: 697px) 100vw, 697px" />](https://ashplats.org/wp-content/uploads/2018/01/Winter-trees-in-Ashplats.jpg)<figcaption class="caption wp-caption-text"> Coppiced Sweet Chestnut against a winter sky</figcaption></figure> 
+
+ <figure>
+  <img src="ACGWebSite/images/Winter-trees-in-Ashplats.jpg" alt="Winter Tress" style="width:40%"/>
+  <figcaption>Coppiced Sweet Chestnut against a winter sky</figcaption>
+</figure>
 
 The woodland is typical of the High Weald landscape, clothing the ridges and valley sides right down to the banks of the two streams that converge at the wood’s southern tip and eventually make their way to the sea via the River Medway.
 
 The bulk of the wood is characterized by Sweet Chestnut, Silver Birch, Alder, Oak and Ash and the associated shrub layer of Coppice Hazel, Holly and Hawthorn.
 
-![Orange Tip Butterfly](P1050245-300x222.jpg =300x* Orange Tip Butterfly)
+ <figure>
+  <img src="ACGWebSite/images/P1050245.jpg" alt="Orange Tip Butterfly" style="width:40%"/>
+  <figcaption>Orange Tip Butterfly</figcaption>
+</figure>
 
 The ground is rich in flora and carpeted with the flowers of bluebells and wood anemones in the Spring.
 
 The recent re-introduction of coppicing and the restoration of glades and an old meadow increase light penetration and helps the flora, butterflies and other insects thrive. For more information see the Coppicing page of the web site
 
-<a href="https://ashplats.org/wp-content/uploads/2018/01/P1010361.jpg"><img class="wp-image-155 size-medium" src="https://ashplats.org/wp-content/uploads/2018/01/P1010361-300x260.jpg" alt="" width="300" height="260" srcset="https://ashplats.org/wp-content/uploads/2018/01/P1010361-300x260.jpg 300w, https://ashplats.org/wp-content/uploads/2018/01/P1010361-768x665.jpg 768w, https://ashplats.org/wp-content/uploads/2018/01/P1010361-1024x887.jpg 1024w, https://ashplats.org/wp-content/uploads/2018/01/P1010361.jpg 1920w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+ <figure>
+  <img src="ACGWebSite/images/P1010361.jpg" alt="Bee" style="width:40%"/>
+  <figcaption>Insects thrive in the glade areas</figcaption>
+</figure>
 
-Bee feeding.The higher slopes of the wood have been laid to a plantation of Sweet Chestnut that is cut for timber on a regular coppice cycle.<figure id="attachment_159" class="thumbnail wp-caption alignnone" style="width: 707px">
+Bee feeding.The higher slopes of the wood have been laid to a plantation of Sweet Chestnut that is cut for timber on a regular coppice cycle.
 
-[<img class="wp-image-159 size-large" src="https://ashplats.org/wp-content/uploads/2018/01/P1150123-1024x576.jpg" alt="" width="697" height="392" srcset="https://ashplats.org/wp-content/uploads/2018/01/P1150123-1024x576.jpg 1024w, https://ashplats.org/wp-content/uploads/2018/01/P1150123-300x169.jpg 300w, https://ashplats.org/wp-content/uploads/2018/01/P1150123-768x432.jpg 768w, https://ashplats.org/wp-content/uploads/2018/01/P1150123.jpg 1920w" sizes="(max-width: 697px) 100vw, 697px" />](https://ashplats.org/wp-content/uploads/2018/01/P1150123.jpg)<figcaption class="caption wp-caption-text">  One of our Wet Woodlands that dries out in the Summer</figcaption></figure> 
+ <figure>
+  <img src="ACGWebSite/images/P1150123.jpg" alt="Wet Woodland" style="width:40%"/>
+  <figcaption>One of our Wet Woodlands that dries out in the Summer</figcaption>
+</figure>
 
 A broad array of birdsong can be heard all year round and the resident population of small mammals includes the protected dormouse.
 
@@ -28,18 +41,18 @@ Fish cannot survive in ponds that dry out, and so Wet Woodland is very important
 During a walk in Ashplats Woods in November 2011, one of our members spotted 16 different species of birds in a short time frame:
 
   * Sparrowhawk
-  *  Wood Pigeon
+  * Wood Pigeon
   * Great Spotted Woodpecker
-  *  Wren
+  * Wren
   * Robin
-  *  Blackbird
+  * Blackbird
   * Goldcrest
-  *  Long-tailed Tit
+  * Long-tailed Tit
   * Blue Tit
-  *  Great Tit
+  * Great Tit
   * Nuthatch
-  *  Treecreeper
+  * Treecreeper
   * Jay
-  *  Magpie
+  * Magpie
   * Carrion Crow
-  *  Chaffinch
+  * Chaffinch
