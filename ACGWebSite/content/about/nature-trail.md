@@ -22,4 +22,4 @@ On top of each post is a beautiful brass plaque designed by a local artist Victo
 
 Please use the trail as much and however you like. Enjoy yourselves and have FUN.
 
-To find out more about girlguiding locally visit the [Girl Guiding Sussex Central](https://www.facebook.com/girlguidingsc") Facebook page.
+To find out more about girlguiding locally visit the [Girl Guiding Sussex Central](https://www.facebook.com/girlguidingsc) Facebook page.
