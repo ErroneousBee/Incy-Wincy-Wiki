@@ -12,7 +12,7 @@ creating a mosaic of old and new growth with variations of light and shade. Thes
 plants and animals to survive. Coppicing smaller trees and felling large trees, known as standards for timber was a common way to 
 managed a woodland resource.
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/Coppicing.jpg" alt="Coppicing" style="width:40%"/>
   <figcaption>Coppicing in Action</figcaption>
 </figure>
@@ -20,7 +20,7 @@ managed a woodland resource.
 Some of Ashplats Wood has been coppiced in the last 10 years or so, and, in conjunction with Mid Sussex District Council, further work is due to take place (weather permitting) in the winter of 2011-12.
 
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/Coppiced-Sweet-Chestnut.jpg" alt="Coppice Stool" style="width:40%"/>
   <figcaption>A Stool of Coppiced Chestnut</figcaption>
 </figure>
@@ -40,7 +40,7 @@ Some of Ashplats Wood has been coppiced in the last 10 years or so, and, in conj
 *  Won’t cutting down trees kill them?
     * No – not if the plant is still vigorous; a coppiced tree can live for hundreds of years; sometime much longer than one that is not coppiced.
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/Coppice-Stools.jpg" alt="Coppice Stool regrowth" style="width:40%"/>
   <figcaption>Coppice Stool regrowth</figcaption>
 </figure>

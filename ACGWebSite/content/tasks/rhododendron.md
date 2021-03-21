@@ -1,5 +1,5 @@
 ---
-title: 'Tasks &#8211; Rhododendron Control'
+title: Tasks - Rhododendron Control
 ---
 
 # Controlling Invasive Species
@@ -8,7 +8,7 @@ _Rhododendron Ponticum_ was introduced into Britain by the Victorians for its or
 
 Unfortunately they didn’t realise that it would ‘escape’ from our gardens and start to colonise our woodlands.
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/P1150702.jpg" alt="Rhododendron Ponticum" style="width:40%"/>
   <figcaption>Rhododendron Ponticum</figcaption>
 </figure>

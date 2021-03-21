@@ -3,6 +3,8 @@ title: Navigation
 comment: No external links work here ( E.g. cannot navigate to http://example.com )
 ---
 * Home
+* Ashplats Map
+* Task Calendar
 * [What we do in the woods](#tasks)
     * [The Early Years](#the-early-years)
     * [Rhododendron](#rhododendron)
@@ -13,13 +15,11 @@ comment: No external links work here ( E.g. cannot navigate to http://example.co
     * [The Woods](#the-woods)
     * [History](#history)
     * [Geology](#geology)
+    * [Coppicing](#coppicing)
     * [Flora and Fauna](#flora-and-fauna)
     * [Nature Trail](#nature-trail)
     * [Species](#species-lists)
     * [BushCam](#bushcam)
-    * [Coppicing](#coppicing)
-* Map
-* Calendar
 * [Do and Don't](#dos-and-donts)
 * [Getting Involved](#getting-involved)
 * [Contact Us](#Contact)

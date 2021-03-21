@@ -1,19 +1,39 @@
 ---
-title: 'About The Woods - Wildlife Images'
+title: About The Woods - Wildlife Images
 class: plain
 ---
 
 # Images taken by the static motion sensitive camera.
  
+### Deer
 
-### Deer Visting at Night
+<figure>
+  <img src="ACGWebSite/images/BushCam/Deer1.png" alt="Deer" style="width:80%"/>
+  <figcaption>A Deer visiting at night</figcaption>
+</figure>
 
-![A Deer visiting at night](/content/images/BushCam/pcllnfgebhfgahei.png "Deer visiting at night")
 
-![A Deer](/content/images/BushCam/2018-07_Deer.png "A Deer")
+### Birds
+
+<figure>
+  <img src="ACGWebSite/images/BushCam/Jay1.png" alt="Jay" style="width:80%"/>
+  <figcaption>Jay</figcaption>
+</figure>
+
+<figure>
+  <img src="ACGWebSite/images/BushCam/Jay2.png" alt="Jay" style="width:80%"/>
+  <figcaption>Close up</figcaption>
+</figure>
+
+### Foxes
+
+<figure>
+  <img src="ACGWebSite/images/BushCam/Fox1.png" alt="Fox" style="width:80%"/>
+  <figcaption>Fox</figcaption>
+</figure>
 
 ### Camera Statistics
 
 Some statistics on the type of creature captured by the camera.
 
-![Camera Statistics](/content/images/BushCam/oplebkdmoeclgnjh.png) 
+![Camera Statistics](ACGWebSite/images/BushCam/oplebkdmoeclgnjh.png) 

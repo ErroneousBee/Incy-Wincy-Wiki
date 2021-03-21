@@ -1,8 +1,8 @@
 ---
-title: 'Tasks &#8211; Pond Maintenance'
+title: Tasks - Pond Maintenance
 ---
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/pond_wide.jpg" alt="Pond Workers" style="width:100%"/>
   <figcaption>A Task day in 2011 thinning willows in Alfreds Pond</figcaption>
 </figure>

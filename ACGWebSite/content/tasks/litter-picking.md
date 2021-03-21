@@ -1,5 +1,5 @@
 ---
-title: 'Tasks &#8211; Litter Picking'
+title: Tasks - Litter Picking
 ---
 
 <figure>

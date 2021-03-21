@@ -1,8 +1,8 @@
 ---
-title: 'Tasks &#8211; Path Building'
+title: Tasks - Path Building
 ---
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/P1060208.jpg" alt="Steps" style="width:40%"/>
   <figcaption>A completed section of the steps</figcaption>
 </figure>
@@ -18,7 +18,7 @@ The project was planned and co-ordinated by ACG volunteers who proposed a sourci
 
 Tests with the locally available chestnut coppice wood resulted in a simple design of a split log riser, held in place by supporting pegs hammered into the ground, backfilled by stone. Chestnut resists rotting, and a sandstone backfill would allow water to drain away.
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/P1040964.jpg" alt="Splitting Chestnut" style="width:40%"/>
   <figcaption>Splitting a chestnut log</figcaption>
 </figure>
@@ -26,7 +26,7 @@ Tests with the locally available chestnut coppice wood resulted in a simple desi
 The first task was to coppice the chestnut which was split and debarked to produce step risers. Smaller chestnut logs were cut to length, split, and then trimmed to a point at one end.
 
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/Sandstone-being-delivered-for-Ghyll-Steps-project.jpg" alt="Sanstone Delivery" style="width:40%"/>
   <figcaption>Delivery of sandstone from a local housing development</figcaption>
 </figure>

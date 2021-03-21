@@ -1,6 +1,9 @@
 ---
+comment: 1st level items apper in the bar, 2nd level are dropdowns, 3rd looks ugly.
 ---
 * Home
+* Map
+* Calendar
 * [Tasks](#tasks)
     * [The Early Years](#the-early-years)
     * [Rhododendron](#rhododendron)
@@ -8,16 +11,13 @@
     * [Path Building](#path-building)
     * [Litter Picking](#litter-picking)
 * [About](#about)
-    * [The Woods](#the-woods)
-    * [History](#history)
-    * [Geology](#geology)
+    * [The Nature Trail](#nature-trail)
+    * [Do and Don't](#dos-and-donts)
+    * [History of Ashplats](#history)
+    * [Geology of Ashplats](#geology)
     * [Flora and Fauna](#flora-and-fauna)
-    * [Nature Trail](#nature-trail)
     * [Species](#species-lists)
     * [BushCam](#bushcam)
     * [Coppicing](#coppicing)
-    * [Do and Don't](#dos-and-donts)
-    * [Getting Involved](#getting-involved)
-* Map
-* Calendar
+* [Get Involved](#getting-involved)
 * Contact

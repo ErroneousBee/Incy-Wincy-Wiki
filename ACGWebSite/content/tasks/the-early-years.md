@@ -23,22 +23,22 @@ The paths and tracks in the woodland needed attention.
 
 The main Holtye Track was made passable by ditching down both sides of it with a digger. Drainage was installed at the ends on the ditches.
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/old_times/IM000033.jpg" alt="Original Track" style="width:40%">
   <figcaption>The Original Condition of the Track.</figcaption>
 </figure>
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/old_times/IM000756.jpg" alt="Digger" style="width:40%">
   <figcaption>Digger Leveling and Ditching the Track.</figcaption>
 </figure>
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/old_times/IM000778.jpg" alt="Smoothing" style="width:40%">
   <figcaption>Smoothing the Surface.</figcaption>
 </figure>
 
- <figure>
+<figure>
   <img src="ACGWebSite/images/old_times/IM000773.jpg" alt="Drains" style="width:40%">
   <figcaption>Drains Under a Crossing Path.</figcaption>
 </figure> 
