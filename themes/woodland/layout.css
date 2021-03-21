@@ -5,10 +5,15 @@ main {
         url(article_shrooms.jpg) 0 0/cover no-repeat;
 }
 
-main > article {
+main > div.article_container {
+    width: 100%;
+    overflow: auto;
+}
+
+main > div.article_container > article {
     max-width: 60em;
-    align-self: center;
     background-color: transparent !important;
+    
 }
 
 main article.plain {
