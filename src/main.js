@@ -177,6 +177,7 @@ const App = {
 
         // Clear the subtitle
         document.querySelector("header span.subtitle").innerHTML = "";
+        document.title = path;
 
         // Config.extension_precedence
         App.fetch_with_extention(Config.contentpath + path, extn_list)
@@ -207,6 +208,7 @@ const App = {
                             // Deal with json frontmatter
                             if (json.title) {
                                 document.querySelector("header span.subtitle").innerHTML = json.title;
+                                document.title = json.title;
                             }
                             element.innerHTML = html;
                             break;
