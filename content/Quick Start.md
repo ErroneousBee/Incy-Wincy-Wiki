@@ -38,10 +38,3 @@ Graphics
 Create an SVG Logo to replace the bee example.
 
 Create webicon to replace favicon.ico
-
-
-
-
-
-
-
