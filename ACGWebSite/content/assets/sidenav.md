@@ -3,8 +3,8 @@ title: Navigation
 comment: No external links work here ( E.g. cannot navigate to http://example.com )
 ---
 * Home
-* Ashplats Map
-* Task Calendar
+* [Ashplats Map](#Map)
+* Calendar
 * [What we do in the woods](#tasks)
     * [The Early Years](#the-early-years)
     * [Rhododendron](#rhododendron)
