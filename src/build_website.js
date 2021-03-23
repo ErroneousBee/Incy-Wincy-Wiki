@@ -33,7 +33,6 @@ function read_config() {
 function main() {
 
     read_config();
-
     console.log("Config Read: ", Config);
 
     const sources = [
@@ -45,9 +44,10 @@ function main() {
         'themes',
         'css',
         Config.search_lunr_index,
-        Config.contentpath
+        Config.contentpath,
     ];
 
+    fse.emptyDirSync(Config.targetpath);
 
     for (const source of sources) {
         const dest = Config.targetpath + '/' + source;
