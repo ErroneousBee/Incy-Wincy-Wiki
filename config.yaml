@@ -9,7 +9,7 @@ home: Home.md
 theme: woodland
 
 # Where should the index page look for "Home.md", "sidenav.md" and all the other pages?
-contentpath: 'ACGWebSite/content/'
+contentpath: 'ACGWebSite/'
 
 # The logo should be a small snippet of html that is loaded into the top left corner of the page
 navigation_logo: assets/logo.html
@@ -34,6 +34,6 @@ settings: Settings.html
 
 # Search index items
 search_fields: ["title", "description", "keywords", "body"]
-search_exclude: ["ACGWebSite/content/assets", "Search.html"]
+search_exclude: ["ACGWebSite/assets", "Search.html"]
 search+max_preview_chars: 275
 search_index: "src/lunr_index.js"

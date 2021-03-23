@@ -5,9 +5,8 @@ keywords: todo development
 
 # Immediate Things
 
-* Hide hamburger for desktop, have it show sidenav for  mobile
-* Accordion sidebar menu
-* Woodlands theme
+* Search Back button.
+
 
 # Features to be developed
 
@@ -20,18 +19,8 @@ keywords: todo development
 * Search 
     * Make back button after search link work.
 * Build Tool
-    * Generate all content into index.html templates
+    * Generate all content into index.html templates?
     * Has crossover with Search and cache
 * Deploy Documentation and Tool
-* Woodland theme (to demo advanced setup)
 
-## Sidebar and Top Navbar
-
-* Make sidebar have accordion abilities
-* What happens in sidebar when its a directory
-    * Show sublist from sidebar?
-    * Show error? (prefer this)
-* CSS dropdown menus
-    * Topbar could cascade better
-    * Topbar should work best as single dropdowns
 
