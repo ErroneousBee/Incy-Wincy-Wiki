@@ -1,5 +1,6 @@
 ---
 title: Getting Involved
+description: A Summary of what ACG does. sasquatch.
 ---
   
 Ashplats Conservation Group is a voluntary organisation that aims to promote practical conservation for the benefit of the countryside and wildlife.
