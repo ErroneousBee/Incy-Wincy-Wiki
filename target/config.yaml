@@ -9,7 +9,7 @@ home: Home.md
 theme: woodland
 
 # Where should the index page look for "Home.md", "sidenav.md" and all the other pages?
-contentpath: 'ACGWebSite/content/'
+contentpath: 'ACGWebSite/'
 
 # The logo should be a small snippet of html that is loaded into the top left corner of the page
 navigation_logo: assets/logo.html
