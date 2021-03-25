@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:ErroneousBee/ACGWebSite.git
+	branch = main
+	commit = 0c42226103cc95ea9a88dcdc7bf724570689fda9
+	parent = ed419f2b3eb4a7bb4dea5231ca667f235afee72e
+	method = merge
+	cmdver = 0.4.3
