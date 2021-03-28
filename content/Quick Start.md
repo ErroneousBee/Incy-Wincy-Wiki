@@ -63,12 +63,19 @@ See your Site in Live Preview
 
 In VS Code, right click on the `index.html` file and select "Open with Live Server". Your website should appear in a browser window. 
 
+Source Control on GitHub
+========================
+
+Create a GitHub account, and host the source repository on there. This makes it easy to deply onto hosting services such as Netlify.
+
 Deploy
 ======
 
 Create a deployable website using the command `npm run build`. This creates everything needed to host your website in the `target/` folder.
 
 ### Deploy On Netlify
+
+Get a Netligy account
 
 ### On an Amazon S3 Instance
 

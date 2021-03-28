@@ -5,6 +5,8 @@ This is intended for creating small websites, perhaps its a small charity or clu
 
 It can also be used inside another repository for hosting developer notes.
 
+More details at the [PortaWiki Site](https://portawiki.netlify.app)
+
 ## Get Started 
 
 * Install VS Code
@@ -24,7 +26,7 @@ It can also be used inside another repository for hosting developer notes.
 
 ## Deploy website onto the Internet
 
-* TODO: Find services that allow fetch
+* Hostable on Netlify, Amazon S3, or any other static hosting service.
 
 ## Hosting your content in a git repo
 
@@ -41,4 +43,4 @@ To push content to the correct place:
 git subtree push --prefix=ACGWebSite ACGWebSite main
 ```
 
-
+git-subrepo works too.
