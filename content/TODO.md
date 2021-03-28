@@ -18,9 +18,8 @@ keywords: todo development
 * Highlight current sidebar location from URL
 * Search 
     * Make back button after search link work.
-* Build Tool
-    * Generate all content into index.html templates?
-    * Has crossover with Search and cache
-* Deploy Documentation and Tool
+    * Try and get it to offer options on incomplete words
+* Introduce plugin architecture and make Search be a plugin.
+
 
 
