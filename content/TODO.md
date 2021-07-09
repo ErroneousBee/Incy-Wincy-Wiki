@@ -21,5 +21,24 @@ keywords: todo development
     * Try and get it to offer options on incomplete words
 * Introduce plugin architecture and make Search be a plugin.
 
+# Behavior from URL
+
+Has a suffix? ->
+    We have that document? -> 
+        Is a known suffix -> Load into view area, keep URL as is.
+        Not known Suffix? -> Open in new Tab
+    Don't Have document? -> Show error page, keep URL as is.
+
+Is a Path? -> 
+    We have a Match? -> Load it into view area, keep URL as is.
+    We dont Have that document? -> Show error page, keep URL as is.
+
+# Behaviour from Link
+
+Is Fully qualified? -> Set URL to match. Drive behaviour from URL.
+
+
+
+
 
 
