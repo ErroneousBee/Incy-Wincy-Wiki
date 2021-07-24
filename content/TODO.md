@@ -15,6 +15,8 @@ keywords: todo development
     * Make this feel completly natural
     * Create comprehensive test pages
 * Improve dark and light themes
+    * Make favicon be dynamic from the theme
+    * Deal with main-background showing beside main page
 
 
 # Features to be developed
