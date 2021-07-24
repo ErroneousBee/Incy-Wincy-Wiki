@@ -5,8 +5,9 @@ title: PortaWiki
 # Set the home path, this path is loaded if no specific path is given.
 home: Home
 
-# Choose a theme, which will correspond to a folder in the themes/ folder. This folder should contain css files such as colors.css and layout.css
-theme: default
+# Choose a theme, which will correspond to a folder in the themes/ folder. 
+# This folder should contain css files such as colors.css and layout.css
+theme: light
 
 # Where should the index page look for "Home.md", "sidenav.md" and all the other pages?
 contentpath: 'content/'
@@ -21,11 +22,10 @@ navigation_sidebar: assets/sidenav.md
 navigation_topbar: assets/headernav.md
 
 # Developer stuff
-show_config: true
-extension_precedence: ["md", "html", "htm", "txt"] # Show markdown, then htmls, then text.
-extension_types: ["markdown", "html", "html", "text"]
+show_config: true # Write a report of the config to the browser console.
+extension_precedence: ["md", "html", "htm", "txt"] # Which filetypes we prefer to show, .md is first.
+extension_types: ["markdown", "html", "html", "text"] # How to interpret file types.
 external_types: ["pdf"] # Open pdf files as new urls
-
 
 # This is the search tool, which is an html page behind the "search" link
 search: Search.html
@@ -34,5 +34,5 @@ search: Search.html
 search_fields: ["title", "description", "keywords", "body"]
 search_exclude: ["content/assets", "Search.html"]
 search_filetypes: ["markdown","md","html","htm","txt","pdf"]
-search+max_preview_chars: 275
+search_max_preview_chars: 275
 search_index: "src/lunr_index.js"

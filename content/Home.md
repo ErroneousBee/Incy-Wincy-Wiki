@@ -9,6 +9,6 @@ This is Home.md, and is the default page.
 
 There is a [TODO list](#TODO) list for development yet to happen.
 
-This is a [link](#testarea/test) to the test page, or see [this][1].
+This is a [link](#/testarea/test) to the test page, or see [this][1].
 
-[1]: #testarea/test
+[1]: #/testarea/test
