@@ -14,9 +14,7 @@ keywords: todo development
 * Behavior from URL or links
     * Make this feel completly natural
     * Create comprehensive test pages
-* Improve dark and light themes
-    * Make favicon be dynamic from the theme
-
+* Make frontmatter be able to control article classname `class: something`
 
 # Features to be developed
 
