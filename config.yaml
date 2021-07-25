@@ -7,7 +7,7 @@ home: Home
 
 # Choose a theme, which will correspond to a folder in the themes/ folder. 
 # This folder should contain css files such as colors.css and layout.css
-theme: light
+theme: default
 
 # Where should the index page look for "Home.md", "sidenav.md" and all the other pages?
 contentpath: 'content/'

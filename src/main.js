@@ -468,6 +468,7 @@ const App = {
         const theme = (name) ? name : Config.theme;
         document.querySelector("link#theme_colors").setAttribute("href", "themes/" + theme + "/colors.css");
         document.querySelector("link#theme_layout").setAttribute("href", "themes/" + theme + "/layout.css");
+        document.querySelector("link#theme_icon").setAttribute("href", "themes/" + theme + "/favicon.ico");
     }
 
 

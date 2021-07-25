@@ -75,10 +75,14 @@ Create a deployable website using the command `npm run build`. This creates ever
 
 ### Deploy On Netlify
 
-Get a Netligy account
+* Get Netlify and GitHub accounts.
+* Commit and push your site to your github account.
+* Configure netlify to deploy from the Github repo.
 
-### On an Amazon S3 Instance
 
 ### In your own Apache HTTPD instance.
+
+* Build the site with: `npm run build`
+* Copy the comtents of directory `target/` to your Apache htdocs directory.
 
 
