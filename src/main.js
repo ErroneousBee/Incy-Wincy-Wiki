@@ -19,6 +19,9 @@ const App = {
 
         App.load_theme();
 
+        // Run all plugin initialisers
+        document.dispatchEvent(new Event('initialise_plugins'));
+
         // Load the assorted navigation, banners and whatnot.
         App.load_side_content();
 

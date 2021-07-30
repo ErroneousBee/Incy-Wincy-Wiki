@@ -37,7 +37,6 @@ function copy_to_target() {
     // Copy all the files into the target directory
     const sources = [
         'index.html',
-        'favicon.ico',
         'config.yaml',
         'src/main.js',
         'src/lunr_search.js',
@@ -46,6 +45,11 @@ function copy_to_target() {
         Config.search_lunr_index,
         Config.contentpath,
     ];
+
+    // Include configured plugins
+    for ( const plugin of Config.plugins) {
+        sources.push('plugins/'+plugin);
+    }
 
     fse.emptyDirSync(Config.targetpath);
 

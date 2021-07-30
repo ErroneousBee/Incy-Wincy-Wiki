@@ -17,3 +17,5 @@ const Demo = {
     }
 
 }
+
+document.addEventListener('initialise_plugins', Demo.initialise, false);
