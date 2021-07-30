@@ -27,13 +27,14 @@ function read_config() {
         return;
     }
 
-}
-
-function main() {
-
-    read_config();
     console.log("Config Read: ", Config);
 
+
+}
+
+function copy_to_target() {
+
+    // Copy all the files into the target directory
     const sources = [
         'index.html',
         'favicon.ico',
@@ -51,9 +52,9 @@ function main() {
     for (const source of sources) {
         const dest = Config.targetpath + '/' + source;
 
-        console.log("Copy", source, dest);
-
-        fse.copy(source, dest, { overwrite: true })
+        fse.copy(source, dest, {
+                overwrite: true
+            })
             .then(() => {
                 console.log("Copied: ", source);
             })
@@ -62,6 +63,39 @@ function main() {
             });
 
     }
+
+}
+
+function install_plugins() {
+
+    console.log("Installing plugins into index.html...");
+
+    // Get all the new source lines from configured plugins
+    const insert_html = [];
+    for ( const plugin of Config.plugins) {
+        const inclines = fs.readFileSync('plugins/'+plugin+'/includes.html').toString().split("\n");;
+        insert_html.push(...inclines);
+    }
+
+    const lines = fs.readFileSync('index.html').toString().split("\n");
+    const startline = lines.findIndex(l => l.includes(' <!-- Start of Plugins -->'));
+    const endline = lines.findIndex(l => l.includes(' <!-- End of Plugins -->'));
+    lines.splice(startline+1 , endline -  startline - 1, ...insert_html );
+
+    fs.writeFileSync('index.html',lines.join("\n"));
+
+    console.log("Installed plugins: "+ Config.plugins.join(", ") +".");
+
+}
+
+function main() {
+
+    read_config();
+
+    install_plugins();
+
+    copy_to_target();
+
 }
 
 main();

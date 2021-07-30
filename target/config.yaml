@@ -36,3 +36,9 @@ search_exclude: ["content/assets", "Search.html"]
 search_filetypes: ["markdown","md","html","htm","txt","pdf"]
 search_max_preview_chars: 275
 search_index: "src/lunr_index.js"
+
+
+# Plugins
+
+plugins: 
+  - Demo
