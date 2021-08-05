@@ -9,6 +9,8 @@
     },
     "globals": {
         "jsyaml": "readonly",
-        "showdown": "readonly"
+        "showdown": "readonly",
+        "Config": "writable",
+        "App": "writable"
     }
 }

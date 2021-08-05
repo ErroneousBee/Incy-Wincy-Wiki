@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const Config = {
+Config = {
     title: 'Default Title',
     extension_precedence: ["md", "html", "htm", "txt"],
     theme: 'default',
@@ -10,7 +10,10 @@ const Config = {
     contentpath: 'content/'
 };
 
-const App = {
+
+ App = {
+
+    Plugins: [], // Plugins will register themselves here in plugin init.
 
     async onload() {
 
@@ -215,8 +218,6 @@ const App = {
 
             })
             .catch(e => {
-                console.log( "catch 2");
-
                 console.error(e);
                 element.innerHTML = '<p class="error">' + e + '.</p><p>Path: ' + path + '</p>';
             });
@@ -245,10 +246,15 @@ const App = {
                     document.querySelector("header span.subtitle").innerHTML = json.title;
                     document.title = json.title;
                 }
-                element.innerHTML = html;
 
-                // Fix links to be relative
-                App.fix_links(element);
+                // Tell a plugin to do its stuff, or render the page.
+                if (json.plugin) {
+                    console.log( App.Plugins, json.plugin, html );
+                    App.Plugins[json.plugin].onpageload(json,html,element);
+                } else {
+                    element.innerHTML = html;
+                    App.fix_links(element);
+                }
 
                 break;
             }
