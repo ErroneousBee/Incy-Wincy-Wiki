@@ -22,8 +22,10 @@ App = {
 
         App.load_theme();
 
+        console.log( App.Plugins, Config.plugins );
         // Run all plugin initialisers
-        for ( const plugin in App.Plugins ) {
+        for ( const plugin of Config.plugins ) {
+            console.log(plugin);
             App.Plugins[plugin].initialise();
         }
 
@@ -334,14 +336,6 @@ App = {
 
         // Click on the header navigation toolbar
         document.querySelector("nav#navigation_topbar").onclick = App.nav_topbar_click_handler;
-
-        // Click on the search icon
-        // TODO: Make this driven from the config.
-        document.querySelector("header span.search").onclick = () => {
-            App.set_url(Config.search);
-            //App.load_content_from_url();
-        }
-
 
     },
 

@@ -39,6 +39,7 @@ search_index: "src/lunr_index.js"
 
 
 # Plugins
-
 plugins: 
   - Demo
+  - Search
+  
