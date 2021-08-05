@@ -1,1 +1,7 @@
 This is a demonstration plugin, showing basic setup.
+
+includes.html is a file that is copied into the head section of index.html by the build tool.
+
+src/plugin.js is the code that defines 2 function that are called when the site it loaded,m and when the page is read.
+
+src/plugin.css is some CSS used to enhance the text.

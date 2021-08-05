@@ -35,3 +35,8 @@ Links to PDF ( or other "download" ) file:
 * [relative to this page](#files/pdf_test.pdf) 
 * [fullpath hash](#/testarea/files/pdf_test.pdf) 
 * [fullpath](/content/testarea/files/pdf_test.pdf) 
+
+Other tests:
+
+* [Dark Theme](#theme)
+* [Demo Plugin](#plugins/Demo)

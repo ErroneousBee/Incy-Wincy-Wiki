@@ -11,7 +11,7 @@ Config = {
 };
 
 
- App = {
+App = {
 
     Plugins: [], // Plugins will register themselves here in plugin init.
 
@@ -23,7 +23,9 @@ Config = {
         App.load_theme();
 
         // Run all plugin initialisers
-        document.dispatchEvent(new Event('initialise_plugins'));
+        for ( const plugin in App.Plugins ) {
+            App.Plugins[plugin].initialise();
+        }
 
         // Load the assorted navigation, banners and whatnot.
         App.load_side_content();
@@ -246,11 +248,14 @@ Config = {
                     document.querySelector("header span.subtitle").innerHTML = json.title;
                     document.title = json.title;
                 }
-
+                
+                // Loads or resets the theme
+                App.load_theme(json.theme);
+                
                 // Tell a plugin to do its stuff, or render the page.
                 if (json.plugin) {
-                    console.log( App.Plugins, json.plugin, html );
-                    App.Plugins[json.plugin].onpageload(json,html,element);
+                    console.log(App.Plugins, json.plugin, html);
+                    App.Plugins[json.plugin].onpageload(json, html, element);
                 } else {
                     element.innerHTML = html;
                     App.fix_links(element);
