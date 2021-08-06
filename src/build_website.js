@@ -39,10 +39,8 @@ function copy_to_target() {
         'index.html',
         'config.yaml',
         'src/main.js',
-        'src/lunr_search.js',
         'themes',
         'css',
-        Config.search_lunr_index,
         Config.contentpath,
     ];
 
@@ -72,19 +70,13 @@ function copy_to_target() {
 
 async function install_plugins() {
 
+    // Run all the pluging build scripts
     for ( const plugin of Config.plugins) {
-
         let  { build }   = require('../plugins/'+plugin+'/build.js');
-        console.log( build);
         await build( Config );
     }
         
-    
-
-    
     console.log("Installing plugins into index.html...");
-
-
 
     // Get all the new head and body source lines from configured plugins
     const html_head = [];
