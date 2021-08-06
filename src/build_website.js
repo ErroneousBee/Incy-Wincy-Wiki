@@ -3,7 +3,7 @@ const fs = require("fs");
 const fse = require('fs-extra');
 const js_yaml = require('js-yaml');
 
-const Config = {
+Config = {
     // Valid search fields: "title", "description", "keywords", "body"
     search_fields: ["title", "description", "keywords", "body"],
     search_exclude: ["search.html"],
@@ -70,21 +70,40 @@ function copy_to_target() {
 
 }
 
-function install_plugins() {
+async function install_plugins() {
 
+    for ( const plugin of Config.plugins) {
+
+        let  { build }   = require('../plugins/'+plugin+'/build.js');
+        console.log( build);
+        await build( Config );
+    }
+        
+    
+
+    
     console.log("Installing plugins into index.html...");
 
-    // Get all the new source lines from configured plugins
-    const insert_html = [];
+
+
+    // Get all the new head and body source lines from configured plugins
+    const html_head = [];
+    const html_body = [];
     for ( const plugin of Config.plugins) {
-        const inclines = fs.readFileSync('plugins/'+plugin+'/includes.html').toString().split("\n");;
-        insert_html.push(...inclines);
+        html_head.push(...(fs.readFileSync('plugins/'+plugin+'/includes_head.html').toString().split("\n")));
+        html_body.push(...(fs.readFileSync('plugins/'+plugin+'/includes_body.html').toString().split("\n")));
     }
 
+    // Locate head section and fill it.
     const lines = fs.readFileSync('index.html').toString().split("\n");
-    const startline = lines.findIndex(l => l.includes(' <!-- Start of Plugins -->'));
-    const endline = lines.findIndex(l => l.includes(' <!-- End of Plugins -->'));
-    lines.splice(startline+1 , endline -  startline - 1, ...insert_html );
+    const head_start = lines.findIndex(l => l.includes(' <!-- Start of Plugins HEAD -->'));
+    const head_end = lines.findIndex(l => l.includes(' <!-- End of Plugins HEAD -->'));
+    lines.splice(head_start+1 , head_end -  head_start - 1, ...html_head );
+
+    // Locate body section and fill it
+    const body_start = lines.findIndex(l => l.includes(' <!-- Start of Plugins BODY -->'));
+    const body_end = lines.findIndex(l => l.includes(' <!-- End of Plugins BODY -->'));
+    lines.splice(body_start+1 , body_end -  body_start - 1, ...html_body );
 
     fs.writeFileSync('index.html',lines.join("\n"));
 

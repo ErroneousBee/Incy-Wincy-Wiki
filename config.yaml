@@ -27,7 +27,12 @@ extension_precedence: ["md", "html", "htm", "txt"] # Which filetypes we prefer t
 extension_types: ["markdown", "html", "html", "text"] # How to interpret file types.
 external_types: ["pdf"] # Open pdf files as new urls
 
-# This is the search tool, which is an html page behind the "search" link
+# Plugins
+plugins: 
+  - Demo
+  - Search
+
+  # This is the search tool, which is an html page behind the "search" link
 search: Search.html
 
 # Search index items
@@ -35,11 +40,3 @@ search_fields: ["title", "description", "keywords", "body"]
 search_exclude: ["content/assets", "Search.html"]
 search_filetypes: ["markdown","md","html","htm","txt","pdf"]
 search_max_preview_chars: 275
-search_index: "src/lunr_index.js"
-
-
-# Plugins
-plugins: 
-  - Demo
-  - Search
-  
