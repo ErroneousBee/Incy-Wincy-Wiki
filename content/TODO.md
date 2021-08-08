@@ -18,14 +18,22 @@ keywords: todo development
 
 # Features to be developed
 
-* Have theme overridable in the frontmatter
 * Highlight current sidebar location from URL
 * Search 
     * Try and get it to offer options on incomplete words
-* Introduce plugin architecture and make Search be a plugin.
-* Quiz - A quiz page that exists as a plugin
+    * Have it stash sucessful results in the URL path
+* Plugins
+    * Quiz - A quiz page that exists as a plugin
+    * Gallery - Show a slideshow or similar.
 * Make a mobile sidebar slideout
 * Make top nav descendants not cascade to badly
+
+# Documentation
+
+* Note when to "npm run build"
+    * After you have finished editing conent, to create search index.
+    * After plugin code, in case it needs to rebuild something.
+    * After an npm install or npm update.
 
 # Create tests
 
