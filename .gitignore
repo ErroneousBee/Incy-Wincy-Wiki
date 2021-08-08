@@ -1,5 +1,4 @@
 css/*
 node_modules/*
-src/lunr_index.js
-target/*
+target/**
 plugins/Search/src/lunr_index.js
