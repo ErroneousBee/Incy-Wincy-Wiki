@@ -40,23 +40,17 @@ App.Plugins.Search = {
         const template = document.getElementById("lunr_search_icon_template").content.cloneNode(true);;
         document.getElementById("main_toolbar").appendChild(template);
 
-        // Click on the search icon
+        // Click on the search icon sets a path.
         document.querySelector("header span.search").onclick = () => {
-            App.set_url(Config.search); // TODO: call the page loader
-            alert("TODO: Open the search");
+            App.set_url(Config.search.path);
         }
+
+        // Tell the page loade rto call us when it sees Search
+        App.Registry.path_diverts.push({ path: Config.search.path, handler: App.Plugins.Search.onactivate })
 
     },
 
-    /**
-     * Executed when the markdown page is read and converted. 
-     * We will have to render the content os the article here.
-     * @param {Object} json - Frontmatter object, pulled from the markdown file.
-     * @param {String} html - The markdown after its been converted to html.
-     * @param {HTMLElement} element - The article element that any content should be inserted into.
-     */
-    async onpageload(json, html, element) {
-
+    async onactivate(json, html, element) {
         console.log("Search Activated", json, html, element)
     }
 

@@ -14,6 +14,9 @@ Config = {
 App = {
 
     Plugins: [], // Plugins will register themselves here in plugin init.
+    Registry: {
+        path_divert: [] // Functions to call for specific paths
+    },
 
     async onload() {
 
@@ -22,10 +25,8 @@ App = {
 
         App.load_theme();
 
-        console.log( App.Plugins, Config.plugins );
         // Run all plugin initialisers
         for ( const plugin of Config.plugins ) {
-            console.log(plugin);
             App.Plugins[plugin].initialise();
         }
 
@@ -101,8 +102,7 @@ App = {
     },
 
     /**
-     * Look at the current URL and load the content based on that URL.
-     * Driven from an event listener.
+     * Driven by onhaschange events. Look at the current URL and load the content based on that URL.
      */
     load_content_from_url(event) {
 
@@ -113,12 +113,23 @@ App = {
         if (path === '') {
             path = Config.home;
         }
+
+        // Is this reserved by a plugin?
+        if ( ["Search"].includes(path) ) {
+            App.Plugins.Search.onpageload(path);
+            return; 
+        }
+
+        // Is this something we dont handle, like a pdf file?
         const isexternal = Config.external_types.map(type => path.endsWith("." + type)).includes(true);
         if (isexternal) {
             window.location.href = url.origin + "/" + Config.contentpath + path;
-        } else {
-            App.read_path_into_element(path, document.getElementById("content"));
-        }
+            return;
+        } 
+        
+        // Must be a normal bit of content for us to display.
+        App.read_path_into_element(path, document.getElementById("content"));
+        
     },
 
     /**

@@ -30,15 +30,15 @@ function find_files(folder) {
         const stat = fs.lstatSync(filename);
 
         // Ignore listed files or paths, or unconfigured file types  
-        if (Config.search_exclude.includes(file)) {
+        if (Config.search.exclude.includes(file)) {
             continue;
         }
-        if (Config.search_exclude.includes(filename)) {
+        if (Config.search.exclude.includes(filename)) {
             continue;
         }
 
         // Files we cant handle
-        if (stat.isFile() && !Config.search_filetypes.includes(filetype)) {
+        if (stat.isFile() && !Config.search.filetypes.includes(filetype)) {
             continue;
         }
 
@@ -180,8 +180,8 @@ async function pdf_to_lunr_doc(filename, fileId) {
 function buildIndex(docs) {
     var idx = lunr(function () {
         this.ref('id');
-        for (var i = 0; i < Config.search_fields.length; i++) {
-            this.field(Config.search_fields[i].slice(0, 1));
+        for (var i = 0; i < Config.search.fields.length; i++) {
+            this.field(Config.search.fields[i].slice(0, 1));
         }
         docs.forEach(function (doc) {
             this.add(doc);
@@ -197,7 +197,7 @@ function buildPreviews(docs) {
 
         let preview = doc.d;
         if (preview == "") {
-            preview = htmlToText(doc.b, {}).slice(0, Config.search_max_preview_chars) + " ...";
+            preview = htmlToText(doc.b, {}).slice(0, Config.search.max_preview_chars) + " ...";
         }
         result[doc["id"]] = {
             "t": doc["t"],

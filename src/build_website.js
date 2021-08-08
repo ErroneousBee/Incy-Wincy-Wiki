@@ -4,11 +4,13 @@ const fse = require('fs-extra');
 const js_yaml = require('js-yaml');
 
 Config = {
-    // Valid search fields: "title", "description", "keywords", "body"
-    search_fields: ["title", "description", "keywords", "body"],
-    search_exclude: ["search.html"],
-    search_max_preview_chars: 275,
-    search_lunr_index: "src/lunr_index.js",
+    
+    search: {
+        // Valid search fields: "title", "description", "keywords", "body"
+        fields: ["title", "description", "keywords", "body"],
+        exclude: ["search.html"],
+        max_preview_chars: 275,
+    },
     contentpath: "content",
     targetpath: "target"
 };
