@@ -115,8 +115,9 @@ App = {
         }
 
         // Is this reserved by a plugin?
-        if ( ["Search"].includes(path) ) {
-            App.Plugins.Search.onpageload(path);
+        const divert = App.Registry.path_divert.find(e => path.startsWith(e.path));
+        if ( divert ) {
+            divert.handler(path, Config, document.getElementById("content"));
             return; 
         }
 
@@ -488,6 +489,15 @@ App = {
         document.querySelector("link#theme_colors").setAttribute("href", "themes/" + theme + "/colors.css");
         document.querySelector("link#theme_layout").setAttribute("href", "themes/" + theme + "/layout.css");
         document.querySelector("link#theme_icon").setAttribute("href", "themes/" + theme + "/favicon.ico");
+    },
+
+    /**
+     * Inform the page loader that this path is to be handled by a plugin
+     * @param {*} path - Any paths that start with this will get the callback called
+     * @param {*} callback - A function to be called when the path changes to this path
+     */
+    register_divert( path, callback ) {
+        App.Registry.path_divert.push({ path: path, handler: callback })
     }
 
 

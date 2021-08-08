@@ -45,13 +45,15 @@ App.Plugins.Search = {
             App.set_url(Config.search.path);
         }
 
-        // Tell the page loade rto call us when it sees Search
-        App.Registry.path_diverts.push({ path: Config.search.path, handler: App.Plugins.Search.onactivate })
+        // Tell the page loader to call our onactivate when it sees a path called "Search"
+        App.register_divert( Config.search.path , App.Plugins.Search.onactivate )
 
     },
 
-    async onactivate(json, html, element) {
-        console.log("Search Activated", json, html, element)
-    }
+    async onactivate(path, config, element) {
+        console.log("Search Activated", path, config, element)
+    },
+
+    
 
 }
