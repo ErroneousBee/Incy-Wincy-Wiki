@@ -19,12 +19,17 @@ keywords: todo development
 # Features to be developed
 
 * Highlight current sidebar location from URL
+* Internationalisation support for plugins and main page.
 * Search 
     * Try and get it to offer options on incomplete words
     * Have it stash sucessful results in the URL path
 * Plugins
-    * Quiz - A quiz page that exists as a plugin
+    * Quiz - A quiz page that exists as a plugin.
     * Gallery - Show a slideshow or similar.
+    * Cookie acceptance - Those annoying dialogs for accept cookies.
+    * Video player/gallery - For hosting small videos.
+
+    
 * Make a mobile sidebar slideout
 * Make top nav descendants not cascade to badly
 
