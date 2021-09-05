@@ -28,8 +28,9 @@ keywords: todo development
     * Gallery - Show a slideshow or similar.
     * Cookie acceptance - Those annoying dialogs for accept cookies.
     * Video player/gallery - For hosting small videos.
-
-    
+    * Blog - Mark a directory as having blogs. 
+        * What do do about datestamps
+        * Introduce a macro into the menus? Not a fan of metaprogramming.   
 * Make a mobile sidebar slideout
 * Make top nav descendants not cascade to badly
 
