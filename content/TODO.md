@@ -6,6 +6,7 @@ keywords: todo development
 # Immediate Things
 
 * Back button through Search to include search parms
+* Nav to #TODO problem ( path "#TODO" file "TODO/Home.md" links to "Tasks" should try "#TODO/Tasks" )
 
 # General improvements
 
