@@ -277,50 +277,6 @@ body > div.container {
     }
 }
 
-// Search page
-article {
-    div.searchform {
-        margin: 3em;
-
-        input {
-            margin-left: 1em;
-            width: 70%;
-        }
-    }
-
-    div.searchresults {
-        margin: 3em;
-
-        ul {
-            list-style: none;
-
-            li {
-                margin-top: 1em;
-
-                a {
-                    text-decoration: none;
-                }
-
-                span.title {
-                    color: var(--search-title-color);
-                }
-
-                span.link {
-                    color: var(--search-link-color);
-                    margin-left: 2em;
-                    font-size: small;
-                    text-decoration: underline;
-                }
-
-                span.preview {
-                    font-size: small;
-                    color: var(--search-preview-color);
-                }
-            }
-        }
-    }
-}
-
 // Media overrides
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     body {
