@@ -26,8 +26,13 @@ App = {
         App.load_theme();
 
         // Run all plugin initialisers
-        for ( const plugin of Config.plugins ) {
-            App.Plugins[plugin].initialise();
+        for (const plugin of Config.plugins) {
+            try {
+                App.Plugins[plugin].initialise();
+            } catch (error) {
+                console.error("No initialise function found for plugin: " + plugin);
+                console.warn("Activate plugins in the config, then run 'npm run build' to install plugins into index.html.");
+            }
         }
 
         // Load the assorted navigation, banners and whatnot.
@@ -116,9 +121,9 @@ App = {
 
         // Is this reserved by a plugin?
         const divert = App.Registry.path_divert.find(e => path.startsWith(e.path));
-        if ( divert ) {
+        if (divert) {
             divert.handler(path, Config, document.getElementById("content"));
-            return; 
+            return;
         }
 
         // Is this something we dont handle, like a pdf file?
@@ -126,11 +131,11 @@ App = {
         if (isexternal) {
             window.location.href = url.origin + "/" + Config.contentpath + path;
             return;
-        } 
-        
+        }
+
         // Must be a normal bit of content for us to display.
         App.read_path_into_element(path, document.getElementById("content"));
-        
+
     },
 
     /**
@@ -213,6 +218,8 @@ App = {
         document.title = path;
 
         // Config.extension_precedence
+
+        // TODO: Try "path" 
         App.fetch_with_extention(Config.contentpath + path, extn_list)
             .catch(e => {
                 // That didnt work, lets try appending Config.home
@@ -257,19 +264,18 @@ App = {
 
             case "md": {
                 const [html, json] = App.convert_markdown_page(text, source);
-                // Deal with json frontmatter
-                if (json.title) {
-                    document.querySelector("header span.subtitle").innerHTML = json.title;
-                    document.title = json.title;
-                }
-                
-                // Loads or resets the theme
-                App.load_theme(json.theme);
-                
+
+                // Set title/theme, etc based on page frontmatter
+                App.handle_frontmatter(json);
+
                 // Tell a plugin to do its stuff, or render the page.
                 if (json.plugin) {
-                    console.log(App.Plugins, json.plugin, html);
-                    App.Plugins[json.plugin].onpageload(json, html, element);
+                    try {
+                        App.Plugins[json.plugin].onpageload(json, html, element, source);
+                    } catch (error) {
+                        console.error("Could not run plugin " + json.plugin + " for page " + source);
+                        console.warn("Activate plugins in the config, then run 'npm run build' to install plugins into index.html.");
+                    }
                 } else {
                     element.innerHTML = html;
                     App.fix_links(element);
@@ -284,6 +290,20 @@ App = {
 
         }
 
+    },
+
+    /**
+     * Set the page title and other stuff based on the frontmatter
+     * @param {Object} json - json object derived from a pages frontmatter
+     */
+    handle_frontmatter(json) {
+        if (json.title) {
+            document.querySelector("header span.subtitle").innerHTML = json.title;
+            document.title = json.title;
+        }
+
+        // Loads or resets the theme
+        App.load_theme(json.theme);
     },
 
     /**
@@ -496,7 +516,7 @@ App = {
      * @param {*} path - Any paths that start with this will get the callback called
      * @param {*} callback - A function to be called when the path changes to this path
      */
-    register_divert( path, callback ) {
+    register_divert(path, callback) {
         App.Registry.path_divert.push({ path: path, handler: callback })
     }
 
