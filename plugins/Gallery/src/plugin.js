@@ -24,10 +24,6 @@ App.Plugins.Gallery = {
         const pageURL = new URL(source);
         const path = pageURL.pathname.substring(0, pageURL.pathname.lastIndexOf("/"));
 
-        console.log(path);
-        console.log(html);
-        console.log(page);
-
         // Create the grid container
         const grid = document.createElement('div');
         grid.className = "Gallery";
@@ -69,16 +65,25 @@ App.Plugins.Gallery = {
         element.textContent = '';
         element.appendChild(grid);
 
-        element.querySelectorAll("img").forEach( image => {
-            console.log('>>',image);
-            image.onmouseover = ( image, event)  => {
-                console.log("Hover", image);
-            };
-
-            image.addEventListener('click', ( image, event)  => {
-                console.log("Click", image);
-            });
+        element.querySelectorAll("img").forEach(image => {
+            image.onclick = this.open_image.bind(this, element);
         });
+
+    },
+
+    open_image(article_el, event) {
+
+        const show = document.createElement('div');
+        show.className = "Gallery_show";
+        show.onclick = () => show.remove();
+
+        const image = document.createElement('img');
+        image.src = event.target.src;
+        show.appendChild(image);
+
+
+        article_el.appendChild(show);
+
 
     }
 }

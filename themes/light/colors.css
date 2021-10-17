@@ -25,6 +25,7 @@
     --search-preview-color: grey;
 
     --figure-background-color: lightgrey;
+    --figure-popout-background-color: rgba(0, 0, 0, 0.8);
     --figure-border-color: darkgrey;
     --figure-caption-color: black;
     --figure-image-border-color: aliceblue;
