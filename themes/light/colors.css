@@ -23,4 +23,9 @@
     --search-title-color: black;
     --search-link-color: blue;
     --search-preview-color: grey;
+
+    --figure-background-color: lightgrey;
+    --figure-border-color: darkgrey;
+    --figure-caption-color: black;
+    --figure-image-border-color: aliceblue;
 }
