@@ -36,7 +36,12 @@ Links to PDF ( or other "download" ) file:
 * [fullpath hash](#/testarea/files/pdf_test.pdf) 
 * [fullpath](/content/testarea/files/pdf_test.pdf) 
 
+# Plugins
+
+* [Demo](plugins/Demo) ( requires Demo active in the config )
+* [Gallery](plugins/Gallery/test_01) 
+
 Other tests:
 
 * [Dark Theme](#theme)
-* [Demo Plugin](#plugins/Demo)
+
