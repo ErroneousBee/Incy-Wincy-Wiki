@@ -266,11 +266,13 @@ body > div.container {
                 }
 
                 .icon {
-                    fill: black;
+                    fill: var(--topbar-color);
+                    background-color: var(--topbar-background-color);
                 }
 
                 .icon:hover {
-                    fill: white;
+                    fill: var(--topbar-color-hover);
+                    background-color: var(--topbar-background-color-hover);
                 }
             }
         }
