@@ -24,6 +24,22 @@ App.Plugins.Gallery = {
         const pageURL = new URL(source);
         const path = pageURL.pathname.substring(0, pageURL.pathname.lastIndexOf("/"));
 
+        console.log(html);
+
+        // Create the preamble/intro container
+        const preamble = document.createElement('div');
+        preamble.className = "Gallery_preamble";
+
+        // Anything before the first image is page preamble
+        let eohead = page.querySelector("img");
+        while (eohead?.parentElement) {
+            eohead = eohead.parentElement;
+        }
+        while (eohead?.previousElementSibling) {
+            preamble.prepend(eohead.previousElementSibling.cloneNode(true));
+            eohead = eohead.previousElementSibling;
+        }
+
         // Create the grid container
         const grid = document.createElement('div');
         grid.className = "Gallery";
@@ -63,6 +79,7 @@ App.Plugins.Gallery = {
 
         // Show it!
         element.textContent = '';
+        element.appendChild(preamble);
         element.appendChild(grid);
 
         element.querySelectorAll("img").forEach(image => {
