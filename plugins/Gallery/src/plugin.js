@@ -16,6 +16,10 @@ App.Plugins.Gallery = {
      */
     async onpageload(json, html, element, source) {
 
+
+        // Widen the article
+        document.getElementById("content").classList.add("Gallery");
+
         // Load HTML into a page and fiddle with it.
         const template = document.createElement('template');
         template.innerHTML = html;
@@ -23,8 +27,6 @@ App.Plugins.Gallery = {
 
         const pageURL = new URL(source);
         const path = pageURL.pathname.substring(0, pageURL.pathname.lastIndexOf("/"));
-
-        console.log(html);
 
         // Create the preamble/intro container
         const preamble = document.createElement('div');
