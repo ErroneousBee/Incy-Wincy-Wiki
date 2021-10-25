@@ -159,10 +159,18 @@ body div.container {
         div.article_container {
             overflow-y: auto;
 
+            // Normally, article is a centered column
             article {
                 margin: 0 auto;
                 height: 100%;
                 max-width: 60em;
+                padding: 3px 1em;
+            }
+
+            // Some plugins or pages might need to fill the available space
+            article.wide {
+                width: 100%;
+                max-width: none;
                 padding: 3px 1em;
             }
         }
