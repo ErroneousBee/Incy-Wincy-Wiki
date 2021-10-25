@@ -18,7 +18,7 @@ App.Plugins.Gallery = {
 
 
         // Widen the article
-        document.getElementById("content").classList.add("Gallery");
+        document.getElementById("content").classList.add("wide");
 
         // Load HTML into a page and fiddle with it.
         const template = document.createElement('template');
