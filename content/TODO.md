@@ -3,10 +3,10 @@ title: PortaWiki TODO List of Features.
 keywords: todo development
 ---
 
-# Immediate Things
+# Bugs and whatnot
 
-* Back button through Search to include search parms
 * Nav to #TODO problem ( path "#TODO" file "TODO/Home.md" links to "Tasks" should try "#TODO/Tasks" )
+
 
 # General improvements
 
@@ -22,11 +22,15 @@ keywords: todo development
 * Highlight current sidebar location from URL
 * Internationalisation support for plugins and main page.
 * Search 
+    * Have input field be on the toolbar
+    * Improve indexer to not show markdown markdown markers
     * Try and get it to offer options on incomplete words
     * Have it stash sucessful results in the URL path
+    * Back button through Search to include search parms
 * Plugins
     * Quiz - A quiz page that exists as a plugin.
-    * Gallery - Show a slideshow or similar.
+    * Slideshow - Show a slideshow or similar.
+    * Image Library - Drop files into a folder and build creates the md file.
     * Cookie acceptance - Those annoying dialogs for accept cookies.
     * Video player/gallery - For hosting small videos.
     * Blog - Mark a directory as having blogs. 
@@ -47,3 +51,4 @@ keywords: todo development
 * Report broken links
 * Responsive design mode (mobile)
 * Search finds PDF and other contents
+* Reveal Capitalised frontmatter field names ( "Title: My Title" doesnt do anything! )
