@@ -30,6 +30,7 @@ external_types: ["pdf"] # Open pdf files as new urls
 # Plugin Activation. 
 plugins: 
   - Search
+  - Gallery
 #  - Demo
 
 
