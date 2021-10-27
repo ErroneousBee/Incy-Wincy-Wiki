@@ -16,6 +16,10 @@ App.Plugins.Gallery = {
      */
     async onpageload(json, html, element, source) {
 
+
+        // Widen the article
+        document.getElementById("content").classList.add("wide");
+
         // Load HTML into a page and fiddle with it.
         const template = document.createElement('template');
         template.innerHTML = html;
@@ -23,6 +27,20 @@ App.Plugins.Gallery = {
 
         const pageURL = new URL(source);
         const path = pageURL.pathname.substring(0, pageURL.pathname.lastIndexOf("/"));
+
+        // Create the preamble/intro container
+        const preamble = document.createElement('div');
+        preamble.className = "Gallery_preamble";
+
+        // Anything before the first image is page preamble
+        let eohead = page.querySelector("img");
+        while (eohead?.parentElement) {
+            eohead = eohead.parentElement;
+        }
+        while (eohead?.previousElementSibling) {
+            preamble.prepend(eohead.previousElementSibling.cloneNode(true));
+            eohead = eohead.previousElementSibling;
+        }
 
         // Create the grid container
         const grid = document.createElement('div');
@@ -63,6 +81,7 @@ App.Plugins.Gallery = {
 
         // Show it!
         element.textContent = '';
+        element.appendChild(preamble);
         element.appendChild(grid);
 
         element.querySelectorAll("img").forEach(image => {

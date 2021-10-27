@@ -25,8 +25,9 @@ keywords: todo development
     * Have input field be on the toolbar
     * Improve indexer to not show markdown markdown markers
     * Try and get it to offer options on incomplete words
-    * Have it stash sucessful results in the URL path
     * Back button through Search to include search parms
+    * Have it stash sucessful results in the URL path. Use a button in the results, or press enter in the input box.
+    * Have input box on toolbar, show results in drop window. Only show page when enter pressed.
 * Plugins
     * Quiz - A quiz page that exists as a plugin.
     * Slideshow - Show a slideshow or similar.
@@ -35,7 +36,10 @@ keywords: todo development
     * Video player/gallery - For hosting small videos.
     * Blog - Mark a directory as having blogs. 
         * What do do about datestamps
-        * Introduce a macro into the menus? Not a fan of metaprogramming.   
+        * Introduce a macro into the menus? Not a fan of metaprogramming.
+    * W3W location conversion to links or even hover overlay
+    * Sass support in plugin build
+    * plugin return code to control normal render.
 * Make a mobile sidebar slideout
 * Make top nav descendants not cascade to badly
 
