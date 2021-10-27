@@ -86,18 +86,14 @@ async function install_plugins() {
                 outputStyle: 'compact'
             });
 
-            console.log(res);
-
             if (res.css) {
                 fs.writeFileSync('plugins/' + plugin + '/src/plugin.css', res.css);
+            } else {
+                console.warn("No CSS generated from sass for plugin:", plugin);
             }
-        } else {
-            console.log("No sass for plugin:", sasspath);
-        }
+        } 
 
-        let {
-            build
-        } = require('../plugins/' + plugin + '/build.js');
+        let { build } = require('../plugins/' + plugin + '/build.js');
         await build(Config);
     }
 
