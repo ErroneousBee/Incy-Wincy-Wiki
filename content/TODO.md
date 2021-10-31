@@ -37,8 +37,9 @@ keywords: todo development
     * Blog - Mark a directory as having blogs. 
         * What do do about datestamps
         * Introduce a macro into the menus? Not a fan of metaprogramming.
-    * W3W location conversion to links or even hover overlay
-    * Sass support in plugin build
+    * Interactive Map
+        * W3W location conversion to links or even hover overlay
+        * Google Maps support?
     * plugin return code to control normal render.
 * Make a mobile sidebar slideout
 * Make top nav descendants not cascade to badly
