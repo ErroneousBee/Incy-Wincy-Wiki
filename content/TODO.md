@@ -15,7 +15,6 @@ keywords: todo development
 * Behavior from URL or links
     * Make this feel completly natural
     * Create comprehensive test pages
-* Make frontmatter be able to control article classname `class: something`
 
 # Features to be developed
 

@@ -44,4 +44,5 @@ Links to PDF ( or other "download" ) file:
 Other tests:
 
 * [Dark Theme](#theme)
+* [Set wide class](#class)
 
