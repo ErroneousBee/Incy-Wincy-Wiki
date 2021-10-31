@@ -14,7 +14,7 @@ To best manage a PortaWiki website use Microsoft VS Code to edit the pages, and 
 * Start VS Code and install the VS Code Live Server plugin:
     ![Install Live Server](content/installliveserver.png "Click on the Extentions Icon ( the leftmost bar ) and search for 'live server'")
 
-* You may also need to install the `git` and `npm` tools. Search the Internat for instructions.
+* You may also need to install the `git` and `npm` tools. Search the Internet for instructions.
 
 Get your PortaWiki Copy
 =======================
@@ -31,7 +31,7 @@ Open the `PortaWiki` folder in VS Code.
 Configuration
 =============
 
-Open file `config.yaml`, replace the "title:" value with your own site title. Dont let it be too long. 
+Open file `config.yaml`, replace the "title:" value with a short title for your site. 
 
 No need to change anything else for now.
 
@@ -54,7 +54,7 @@ Graphics
 
 You will need image editing tools to greate graphics and edit photos. I recommend [GIMP](https://gimp.org/) and [Inkscape](https://inkscape.org/).
 
-Create an logo image to replace the bee example. SVG or PNG are suitable file formats for this job. 
+Create an logo image to replace the bee example. SVG or PNG are suitable file formats for logo images. 
 
 Create a webicon to replace favicon.ico
 
