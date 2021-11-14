@@ -8,6 +8,7 @@ summary: A test page showing how its done
 
 This is test.md
 
+# Link Tests
 Links to paths. Should go to testarea/files/test.md:
 
 * [Relative to this page](files/test) 
@@ -36,13 +37,14 @@ Links to PDF ( or other "download" ) file:
 * [fullpath hash](#/testarea/files/pdf_test.pdf) 
 * [fullpath](/content/testarea/files/pdf_test.pdf) 
 
-# Plugins
+# Plugin Tests
 
 * [Demo](plugins/Demo) ( requires Demo active in the config )
 * [Gallery](plugins/Gallery/test_01) 
 
-Other tests:
+# Other Tests
 
 * [Dark Theme](#theme)
 * [Set wide class](#class)
+* [Image path rewrites](images)
 
