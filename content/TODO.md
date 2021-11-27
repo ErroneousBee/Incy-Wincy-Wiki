@@ -40,7 +40,10 @@ keywords: todo development
         * W3W location conversion to links or even hover overlay
         * Google Maps support?
     * Redirect. Some way of redirecting pages. Best done by plugin config rather then holding pages.
-    * plugin return code to control normal render.
+    * Improve initialise and onpageload error handling.
+        * Drop plugins with bad inits ( thrown errors or no init function )
+        * Error page for bad plugin onpageloads
+        * Test setups?
 * Make a mobile sidebar slideout
 * Make top nav descendants not cascade to badly
 
