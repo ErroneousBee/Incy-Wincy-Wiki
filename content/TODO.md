@@ -22,13 +22,15 @@ keywords: todo development
 * Internationalisation support for plugins and main page.
 * Search 
     * Have input field be on the toolbar
-    * Improve indexer to not show markdown markdown markers
+    * Improve indexer to not show markdown markers
     * Try and get it to offer options on incomplete words
     * Back button through Search to include search parms
     * Have it stash sucessful results in the URL path. Use a button in the results, or press enter in the input box.
     * Have input box on toolbar, show results in drop window. Only show page when enter pressed.
 * Plugins
     * Quiz - A quiz page that exists as a plugin.
+        * Multiple choice
+        * click on part of image ( spot the object )
     * Slideshow - Show a slideshow or similar.
     * Image Library - Drop files into a folder and build creates the md file.
     * Cookie acceptance - Those annoying dialogs for accept cookies.
