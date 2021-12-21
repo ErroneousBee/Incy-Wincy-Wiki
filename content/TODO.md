@@ -20,6 +20,10 @@ keywords: todo development
 
 * Highlight current sidebar location from URL
 * Internationalisation support for plugins and main page.
+* Make the plugins system have 3 intercepts
+    - Before render ( via config? )
+    - Render ( default, gallery, etc )
+    - Post render ( rewrite urls )
 * Search 
     * Have input field be on the toolbar
     * Improve indexer to not show markdown markers
@@ -41,7 +45,7 @@ keywords: todo development
     * Interactive Map
         * W3W location conversion to links or even hover overlay
         * Google Maps support?
-    * Redirect. Some way of redirecting pages. Best done by plugin config rather then holding pages.
+    * Redirect. Some way of redirecting pages. Best done by plugin config rather than using headers in files.
     * Improve initialise and onpageload error handling.
         * Drop plugins with bad inits ( thrown errors or no init function )
         * Error page for bad plugin onpageloads
