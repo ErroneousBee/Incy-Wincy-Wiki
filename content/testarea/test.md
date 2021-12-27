@@ -47,4 +47,5 @@ Links to PDF ( or other "download" ) file:
 * [Dark Theme](#theme)
 * [Set wide class](#class)
 * [Image path rewrites](images)
+* [Tables](tables)
 
