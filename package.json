@@ -1,7 +1,7 @@
 {
-  "name": "portawiki",
+  "name": "incy-wincy-wiki",
   "version": "1.0.0",
-  "description": "A Portable Wiki",
+  "description": "A Small Portable Wiki",
   "main": "index.html",
   "type": "commonjs",
   "scripts": {
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ErroneousBee/PortaWiki.git"
+    "url": "git+https://github.com/ErroneousBee/Incy-Wincy-Wiki.git"
   },
   "author": "neil@neilhancock.co.uk",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ErroneousBee/PortaWiki/issues"
+    "url": "https://github.com/ErroneousBee/Incy-Wincy-Wiki/issues"
   },
-  "homepage": "https://github.com/ErroneousBee/PortaWiki#readme",
+  "homepage": "https://github.com/ErroneousBee/Incy-Wincy-Wiki#readme",
   "devDependencies": {
     "cheerio": "^1.0.0-rc.5",
     "eslint": "^7.20.0",

@@ -7,7 +7,7 @@ This is intended for creating small websites, perhaps its a small charity or clu
 It can also be used inside another repository for hosting developer notes.
 
 More details at the [
-Incy-Wincy-Wiki  Site](https://portawiki.netlify.app)
+Incy-Wincy-Wiki  Site](https://Incy-Wincy-Wiki.netlify.app)
 
 ## Get Started 
 

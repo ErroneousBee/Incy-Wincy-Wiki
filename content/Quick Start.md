@@ -1,11 +1,11 @@
 ---
-title: Getting Started with PortaWiki
+title: Getting Started with Incy-Wincy-Wiki
 ---
 
 Installing Software
 ===================
 
-To best manage a PortaWiki website use Microsoft VS Code to edit the pages, and Node.js for task automation.
+To best manage a Incy-Wincy-Wiki website use Microsoft VS Code to edit the pages, and Node.js for task automation.
 
 * Download and Install [Node.js](https://nodejs.org) 
 
@@ -16,17 +16,17 @@ To best manage a PortaWiki website use Microsoft VS Code to edit the pages, and 
 
 * You may also need to install the `git` and `npm` tools. Search the Internet for instructions.
 
-Get your PortaWiki Copy
-=======================
+Get your Incy-Wincy-Wiki Copy
+=============================
 
-Download the Portawiki source from github. Use the command `git clone https://github.com/ErroneousBee/PortaWiki.git`
+Download the Incy-Wincy-Wiki source from github. Use the command `git clone https://github.com/ErroneousBee/Incy-Wincy-Wiki.git`
 
 To make this project your own:
 * delete the `.git` folder.
-* Change the name of the directory from "PortaWiki" to whatever you choose it to be. 
+* Change the name of the directory from "Incy-Wincy-Wiki" to whatever you choose it to be. 
 * Advanced git users can choose to use more advanced methods, such as forking the project.
 
-Open the `PortaWiki` folder in VS Code.
+Open the `Incy-Wincy-Wiki` folder in VS Code.
 
 Configuration
 =============

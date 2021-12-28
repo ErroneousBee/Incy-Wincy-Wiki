@@ -7,9 +7,9 @@ tags: home quickstart test
    If you have forked or copied this project, you can edit this page to make your own home page!
 -->
 
-# Welcome to the PortaWiki Pages
+# Welcome to the Incy-Wincy-Wiki Pages
 
-PortaWiki is a generator for small static websites. It is suitable for creating sites for small organizations. 
+Incy-Wincy-Wiki is a generator for small static websites. It is suitable for creating sites for small organizations. 
 
 Its designed as a replacement for TiddlyWiki, and shares some design goals with Static Site Generators such as Hugo or Jekyll.
 
