@@ -1,6 +1,5 @@
 ---
 title: Tables.
-theme: light
 ---
 
 | Column Header      | Another Col Header |
@@ -18,7 +17,8 @@ theme: light
 rule as html 
 <hr/>
 
-horizontal rule
+horizontal rule as markdown
+
 ---
 
 after rule

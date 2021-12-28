@@ -180,7 +180,7 @@ App = {
                         break;
 
                     case "md": {
-                        const [html,] = App.convert_markdown_page(text, file);
+                        const [html, ] = App.convert_markdown_page(text, file);
                         element.innerHTML = html;
                         break;
                     }
@@ -319,9 +319,21 @@ App = {
      */
     convert_markdown_page(text, source) {
 
-        // First line is the seperator
+        let fm, md;
+        // First line is the seperator, its yaml and therefore ---
+        // TODO: Improve to get fm and md if no sep, or if <hr> exists
         const sep = text.split("\n", 1)[0].trim();
-        const [fm, md] = text.split("\n" + sep, 2);
+        if (sep === '---') {
+            const lines = text.split('\n');
+            const l1 = lines.indexOf('---', 1);
+            fm = lines.slice(1, l1).join('\n');
+            md = lines.slice(l1 + 1).join('\n');
+        } else {
+            console.warn("No front matter found for", source);
+            fm = 'title: ' + (new URL(source)).pathname;
+            md = text;
+        }
+
         try {
             const json = jsyaml.safeLoad(fm);
             const converter = new showdown.Converter({
@@ -520,10 +532,10 @@ App = {
             const file = img.getAttribute("src");
 
             // Opens with overlay
-            img.onclick = App.open_image.bind(null,element);
+            img.onclick = App.open_image.bind(null, element);
 
             // Is this fully qualified or an external path? 
-            if ( file.startsWith("/") || file.startsWith ("http") ) {
+            if (file.startsWith("/") || file.startsWith("http")) {
                 continue;
             }
 
@@ -533,7 +545,7 @@ App = {
 
     },
 
-     /**
+    /**
      * View an image in a container overlay that dismisses when clicked
      * @param {element} article_el 
      * @param {event} event 
@@ -568,7 +580,10 @@ App = {
      * @param {*} callback - A function to be called when the path changes to this path
      */
     register_divert(path, callback) {
-        App.Registry.path_divert.push({ path: path, handler: callback })
+        App.Registry.path_divert.push({
+            path: path,
+            handler: callback
+        })
     }
 
 
